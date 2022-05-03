@@ -85,11 +85,9 @@ async function getProductByName(name) {
     return product
 }
 
-
-
 async function UpdateProductByName(product) {
-    const res = await client.db(dbName).collection(collectionProduct).replaceOne({ name: `${product.name}` }, product);
-    console.log(res.upsert)
+    const res = await client.db(dbName).collection(collectionProduct).replaceOne({ id: product.id }, product);
+    console.log(res)
 }
 
 // Functions to carrito

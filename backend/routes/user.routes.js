@@ -18,7 +18,6 @@ router.delete("/deleteuser", async (req, res, next)=>{
 })
 
 router.post("/upuseremail", async (req, res, next)=>{
-    console.log(req.body) 
     try {
         await db.UpdateUserByEmail(req.body)
         res.sendStatus(200)
@@ -41,6 +40,32 @@ router.post("/createproducts", async (req, res, next)=>{
     await db.createProduct(product)
     res.sendStatus(200)
 })
+
+router.delete("/deleteproduct", async (req, res, next)=>{
+    const dproduct = await db.deleteProductByName(req.query.name)
+    res.send(dproduct)
+})
+
+router.get("/getallproducts", async (req, res, next)=>{
+    const gproducts = await db.getAllProducts()
+    res.send(gproducts)
+ })
+
+ router.get("/getproductname", async (req, res, next)=>{
+    const gproductn = await db.getProductByName(req.query.name)
+    res.send(gproductn)
+})
+
+router.post("/upproductname", async (req, res, next)=>{
+    try {
+        await db.UpdateProductByName(req.body)
+        res.sendStatus(200)
+      } catch (error) {
+        console.log('error')
+        res.sendStatus(404)
+      }
+})
+
 
 // Carrito
 
