@@ -75,6 +75,14 @@ router.post("/createcarrito", async (req, res, next)=>{
     res.sendStatus(200)
 })
 
+router.delete("/dproductid", async (req, res, next)=>{
+    console.log(req.query.id)
+    await db.deleteProductByIDCarrito(req.query.id)
+    res.sendStatus(200)
+})
+
+
+
 // FactsSales
 
 router.post("/createfactsale", async (req, res, next)=>{

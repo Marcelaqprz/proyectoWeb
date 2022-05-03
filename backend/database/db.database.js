@@ -92,20 +92,19 @@ async function UpdateProductByName(product) {
 
 // Functions to carrito
 
-const carritoProducts = "Carrito"
+const carritoProducts = "carrito"
 
 function createCarrito(product) {
     client.db(dbName).collection(carritoProducts).insertOne(product)
 }
 
 async function deleteProductByIDCarrito(id) { //Delete Product
-    const product = await client.db(dbName).collection(carritoProducts).deleteOne(
-        { id: `${id}` }
+    let pr = await client.db(dbName).collection(carritoProducts).findOne(
+        { idcarrito: parseInt(id) }
     );
-    return product
+    console.log(pr)
+    return pr
 }
-
-
 
 // Functions to FactsSales
 
