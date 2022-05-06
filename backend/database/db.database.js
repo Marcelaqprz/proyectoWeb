@@ -51,9 +51,22 @@ async function deleteUserByEmail(email) {
 }
 
 async function UpdateUserByEmail(user) {
+    //replaceOne
     const res = await client.db(dbName).collection(collectionName).replaceOne({ id: user.id }, user)
-    console.log(res)
+    return res
 }
+
+async function loginStatus(email, password){
+    let user = await client.db(dbName).collection(collectionName).findOne(
+        { email: `${email}`, password: `${password}` }
+    );
+    if(user)
+        return user
+    else
+        return null
+}
+
+
 
 // Functions to products by seller
 // Functions to products
@@ -120,6 +133,7 @@ function getallFactSales() {
 
 
 module.exports = {
+    loginStatus: loginStatus,
     createCarrito: createCarrito,
     deleteProductByIDCarrito: deleteProductByIDCarrito,
     getAllUsers: getAllUsers,

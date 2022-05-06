@@ -10,6 +10,19 @@ export class HomeComponent implements OnInit {
 
   constructor(private user: DatabaseService) { }
   email: string = ''
+  password: string = ''
+  dataUser: user={
+    username:   '',
+    email:      '',
+    name:       '',
+    id:         1,
+    password:   '',
+    address:    '',
+    reg_date:   '',
+    date_birth: '',
+    type_user:  0
+
+  }
   ngOnInit(): void {
   }
 
@@ -33,14 +46,27 @@ export class HomeComponent implements OnInit {
       }
     })
   }
-  /*getjsonUser() {
-    console.log("entra_JSON")
-    this.user.getJsonName().subscribe({
-      next: (Response: any) =>{
-        console.log(Response)
+  deleteUserByEmail(){
+    console.log("entra Delete User By Email")
+    console.log(this.email)
+    this.user.deleteUser(this.email).subscribe({
+      next: (response : user) =>{
+        console.log(response)
       }
     })
-
-  }*/
+  }
+  updateTheUser(){
+    console.log("entra Update The User")
+    this.user.updateUser(this.dataUser).subscribe()
+  }
+  loginStatusUser(){
+    console.log("entra Login Status User")
+    this.user.loginStatus(this.email, this.password).subscribe({
+        next: (response : any) =>{
+          console.log(response)
+        }
+      }
+    )
+  }
 
 }

@@ -19,13 +19,28 @@ router.delete("/deleteuser", async (req, res, next)=>{
 })
 
 router.post("/upuseremail", async (req, res, next)=>{
+   // console.log(req.body)
     try {
         await db.UpdateUserByEmail(req.body)
-        res.sendStatus(200)
+        res.send({
+            data:"ok"
+        })
       } catch (error) {
         console.log('error')
         res.sendStatus(404)
       }
+})
+
+router.post("/login", async (req, res, next)=>{
+    //console.log(req.body.email)
+    //console.log(req.body.password)
+    try {
+        const sl = await db.loginStatus(req.body.email, req.body.password)
+        res.send(sl)
+    } catch (error) {
+        console.log('error')
+        res.sendStatus(404)
+    }
 })
 
 router.post("/createuser", async (req, res, next) =>{

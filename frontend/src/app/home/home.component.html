@@ -16,3 +16,86 @@
     </button>
 </form>
 </div>
+
+<div>
+  <form class="example-form">
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>Delete User</mat-label>
+      <input type="email" matInput placeholder="Ex. test@gmail.com"  [(ngModel)]="email" name="email">
+    </mat-form-field>
+    <button (click)="deleteUserByEmail()">
+      delete user
+    </button>
+</form>
+</div>
+<!-- //////////////////////////////////////////////////////////// -->
+<div>
+  <form class="example-form">
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>username</mat-label>
+      <input type="text" matInput placeholder="Ex. test@gmail.com"  [(ngModel)]="dataUser.username" name="username">
+    </mat-form-field>
+  </form>
+  <form class="example-form"> 
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>email</mat-label>
+      <input type="email" matInput placeholder="Ex. test@gmail.com"  [(ngModel)]="dataUser.email" name="email">
+    </mat-form-field>
+  </form>
+  <form class="example-form"> 
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>name</mat-label>
+      <input type="text" matInput placeholder="Ex. test@gmail.com"  [(ngModel)]="dataUser.name" name="name">
+    </mat-form-field>
+  </form>
+  <form class="example-form"> 
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>password</mat-label>
+      <input type="password" matInput placeholder="Ex. test@gmail.com"  [(ngModel)]="dataUser.password" name="password">
+    </mat-form-field>
+  </form>
+  <form class="example-form"> 
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>address</mat-label>
+      <input type="address" matInput placeholder="Ex. test@gmail.com"  [(ngModel)]="dataUser.address" name="address">
+    </mat-form-field>
+  </form>
+  <form class="example-form"> 
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>registro date</mat-label>
+      <input type="reg_date" matInput placeholder="Ex. test@gmail.com"  [(ngModel)]="dataUser.reg_date" name="reg_date">
+    </mat-form-field>
+  </form>
+  <form class="example-form"> 
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>fecha de nacimiento</mat-label>
+      <input type="date_birth" matInput placeholder="Ex. test@gmail.com"  [(ngModel)]="dataUser.date_birth" name="date_birth">
+    </mat-form-field>
+  </form>
+  <form class="example-form"> 
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>Tipo de usuario</mat-label>
+      <input type="type_user" matInput placeholder="Ex. test@gmail.com"  [(ngModel)]="dataUser.type_user" name="type_user">
+    </mat-form-field>
+  </form>
+  <button (click)="updateTheUser()">
+  update
+  </button>
+</div>
+<div>
+  <form class="example-form"> 
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>email</mat-label>
+      <input type="email" matInput placeholder="Ex. test@gmail.com"  [(ngModel)]="email" name="email">
+    </mat-form-field>
+  </form>
+  <form class="example-form"> 
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>password</mat-label>
+      <input type="password" matInput placeholder="Ex. test@gmail.com"  [(ngModel)]="password" name="password">
+    </mat-form-field>
+  </form>
+  <button (click)="loginStatusUser()">
+    login
+    </button>
+</div>
