@@ -99,7 +99,7 @@ function createCarrito(product) {
 }
 
 async function deleteProductByIDCarrito(id) { //Delete Product
-    let pr = await client.db(dbName).collection(carritoProducts).findOne(
+    let pr = await client.db(dbName).collection(carritoProducts).deleteOne(
         { idcarrito: parseInt(id) }
     );
     console.log(pr)

@@ -1,7 +1,18 @@
 <p>home works!</p>
-<form class="example-form">
+<!--
+-->
+
+<div>
+  <button (click) = "getAllUsers()">get all users</button>
+</div>
+<div>
+  <form class="example-form">
     <mat-form-field class="example-full-width" appearance="fill">
-      <mat-label>nombre</mat-label>
-      <input matInput placeholder="Ex. Pepe" value="Ingrese su nombre">
+      <mat-label>email</mat-label>
+      <input type="text" matInput placeholder="Ex. test@gmail.com"  [(ngModel)]="email" name="email">
     </mat-form-field>
-  </form>
+    <button (click)="getUserByEmail()">
+      get user
+    </button>
+</form>
+</div>

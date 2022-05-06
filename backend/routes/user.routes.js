@@ -8,6 +8,7 @@ router.get("/getallusers", async (req, res, next)=>{
    res.send(usuarios)
 })
 router.get("/getuseremail", async (req, res, next)=>{
+    console.log(req.query.email)
     const useremail = await db.getUserByEmail(req.query.email)
     res.send(useremail)
 })
@@ -89,6 +90,11 @@ router.post("/createfactsale", async (req, res, next)=>{
     const fact = req.body
     await db.createFact(fact)
     res.sendStatus(200)
+})
+
+router.get("/getallfactsale", async (req, res, next)=>{
+    const gfs = await db.getallFactSales()
+    res.send(gfs)
 })
 
 module.exports = router;
