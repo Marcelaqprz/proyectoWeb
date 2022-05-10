@@ -12,8 +12,7 @@
     <mat-form-field appearance="fill">
       <mat-label>Correo</mat-label>
       <input
-        matInput
-        placeholder="Joe@Doe.com"
+      type="email" matInput placeholder="Ex. test@gmail.com"  [(ngModel)]="email" name="email"
         required
       />
     </mat-form-field>
@@ -21,14 +20,14 @@
     Contraseña:
     <mat-form-field appearance="fill">
       <mat-label>Contraseña </mat-label>
-      <input matInput required />
+      <input type="password" matInput placeholder="Ex. test@gmail.com"  [(ngModel)]="password" name="password" required />
     </mat-form-field>
   </div>
   <div class="modal-footer">
     No tiene cuenta? <a href="./registro">Registro</a>
     <span style="width: '30%'"></span>
     <button class="cancelar-btn" mat-button>Cancelar</button>
-    <button class="inicio-btn" mat-button>Ingresar</button>
+    <button class="inicio-btn" mat-button (click)="loginStatusUser()">Ingresar</button>
   </div>
 </ng-template>
 

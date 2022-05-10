@@ -43,10 +43,7 @@ export class HomeComponent implements OnInit {
 
     return this.emailForm.hasError('email') ? 'No es un correo valido!' : '';
   }
-  loginStatusUser(){
-    console.log(this.email)
-    console.log(this.password)
-  }
+  
  /*  getAllUsers() {
     console.log("entra Get All Users")
 
@@ -80,6 +77,8 @@ export class HomeComponent implements OnInit {
     console.log("entra Update The User")
     this.user.updateUser(this.dataUser).subscribe()
   }
+  
+*/
   loginStatusUser(){
     console.log("entra Login Status User")
     this.user.loginStatus(this.email, this.password).subscribe({
@@ -88,7 +87,7 @@ export class HomeComponent implements OnInit {
         }
       }
     )
-  } */
+  } 
 
 
 }
