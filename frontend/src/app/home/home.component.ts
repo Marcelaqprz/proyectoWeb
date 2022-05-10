@@ -1,14 +1,20 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { user } from '../interface/user.interface';
 import { DatabaseService } from '../services/database.service';
+import { FormControl, Validators } from '@angular/forms';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 @Component({
-  selector: 'app-home',
+  selector: 'app-root',
   templateUrl: './home.component.html',
-  styleUrls: ['./home.component.sass']
+  styleUrls: ['./home.component.sass'],
+  encapsulation: ViewEncapsulation.None,
 })
 export class HomeComponent implements OnInit {
+  emailForm = new FormControl('', [Validators.required, Validators.email]);
+  title = 'Proyecto';
 
-  constructor(private user: DatabaseService) { }
+  constructor(/* private user: DatabaseService, */ private modalService: NgbModal) {}
+  
   email: string = ''
   password: string = ''
   dataUser: user={
@@ -26,7 +32,19 @@ export class HomeComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  getAllUsers() {
+  open(content) {
+    this.modalService.open(content, { centered: true });
+  }
+
+  getErrorMessage() {
+    if (this.emailForm.hasError('required')) {
+      return 'Ingresa un correo';
+    }
+
+    return this.emailForm.hasError('email') ? 'No es un correo valido!' : '';
+  }
+
+ /*  getAllUsers() {
     console.log("entra Get All Users")
 
     this.user.getAllUsers().subscribe(
@@ -67,7 +85,7 @@ export class HomeComponent implements OnInit {
         }
       }
     )
-  }
+  } */
 
 
 }
