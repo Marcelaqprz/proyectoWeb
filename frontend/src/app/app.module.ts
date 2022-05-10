@@ -20,6 +20,11 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { GridComponent } from './grid/grid.component';
 import { ArticuloComponent } from './articulo/articulo.component';
+import { HttpClientModule } from '@angular/common/http';
+import {MatInputModule} from '@angular/material/input';
+
+
+
 
 @NgModule({
   declarations: [AppComponent, HomeComponent, GridComponent, ArticuloComponent],
@@ -40,7 +45,9 @@ import { ArticuloComponent } from './articulo/articulo.component';
     MatFormFieldModule,
     ReactiveFormsModule,
     FormsModule,
-    NgbModule
+    NgbModule,
+    HttpClientModule,
+    MatInputModule
   ],
   providers: [],
   bootstrap: [AppComponent],

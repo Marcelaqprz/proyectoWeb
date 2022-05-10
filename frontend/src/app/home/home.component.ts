@@ -13,7 +13,7 @@ export class HomeComponent implements OnInit {
   emailForm = new FormControl('', [Validators.required, Validators.email]);
   title = 'Proyecto';
 
-  constructor(/* private user: DatabaseService, */ private modalService: NgbModal) {}
+  constructor( private user: DatabaseService,  private modalService: NgbModal) {}
   
   email: string = ''
   password: string = ''
@@ -43,7 +43,10 @@ export class HomeComponent implements OnInit {
 
     return this.emailForm.hasError('email') ? 'No es un correo valido!' : '';
   }
-
+  loginStatusUser(){
+    console.log(this.email)
+    console.log(this.password)
+  }
  /*  getAllUsers() {
     console.log("entra Get All Users")
 

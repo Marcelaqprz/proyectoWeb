@@ -6,5 +6,6 @@ export interface producto {
     price:          number,
     id_user_seller: number,
     discount:       number,
-    stock:          number
+    stock:          number,
+    tag:            string,
 }
