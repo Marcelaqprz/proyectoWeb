@@ -22,12 +22,16 @@ import { GridComponent } from './grid/grid.component';
 import { ArticuloComponent } from './articulo/articulo.component';
 import { HttpClientModule } from '@angular/common/http';
 import {MatInputModule} from '@angular/material/input';
+import { CreararticulosComponent } from './creararticulos/creararticulos.component';
+//import { AngularFireModule } from '@angular/fire';
+//import { AngularFireDatabaseModule } from '@angular/fire/database';
+import { environment } from 'src/environments/environment';
 
 
 
 
 @NgModule({
-  declarations: [AppComponent, HomeComponent, GridComponent, ArticuloComponent],
+  declarations: [AppComponent, HomeComponent, GridComponent, ArticuloComponent, CreararticulosComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,

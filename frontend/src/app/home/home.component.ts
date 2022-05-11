@@ -50,6 +50,10 @@ export class HomeComponent implements OnInit {
 
     return this.emailForm.hasError('email') ? 'No es un correo valido!' : '';
   }
+  logOutUser(){
+    this.authservice.deleteData()
+    window.location.reload();
+  }
   /*  getAllUsers() {
      console.log("entra Get All Users")
  
@@ -90,6 +94,7 @@ export class HomeComponent implements OnInit {
       next: (response: user) => {
         console.log(response)
         this.authservice.saveData(response)
+        window.location.reload();
       }
     }
     )

@@ -1,0 +1,88 @@
+<mat-toolbar class="toolbar-inicio">
+    <mat-toolbar-row>
+        <span>DABO</span>
+        <span class="toolbar-spacer"></span>
+        <h5>saludos</h5>
+    </mat-toolbar-row>
+</mat-toolbar>
+
+<!--<ng-container class="body-inicio" style="background-color: #75c9b7">
+    <ng-container class="toolbar-spacer">
+        
+    </ng-container>
+</ng-container>-->
+<div>
+    <mat-form-field class="example-form-field" appearance="fill">
+        <mat-label>Nombre de producto</mat-label>
+        <input matInput type="text" [(ngModel)]="dataProduct.name">
+        <button *ngIf="value" matSuffix mat-icon-button aria-label="Clear">
+            <mat-icon>close</mat-icon>
+        </button>
+    </mat-form-field>
+</div>
+<div>
+    <mat-form-field class="example-form-field" appearance="fill">
+        <mat-label>Descripcion</mat-label>
+        <input matInput type="text" [(ngModel)]="dataProduct.description">
+        <button *ngIf="value" matSuffix mat-icon-button aria-label="Clear">
+            <mat-icon>close</mat-icon>
+        </button>
+    </mat-form-field>
+</div>
+
+<div>
+    <mat-form-field class="example-form-field" appearance="fill">
+        <mat-label>Imagen de producto</mat-label>
+        <input matInput type="text" [(ngModel)]="dataProduct.imageProduct">
+        <button *ngIf="value" matSuffix mat-icon-button aria-label="Clear">
+            <mat-icon>close</mat-icon>
+        </button>
+    </mat-form-field>
+</div>
+<div>
+    <mat-form-field class="example-form-field" appearance="fill">
+        <mat-label>Precio</mat-label>
+        <input matInput type="text" [(ngModel)]="dataProduct.price">
+        <button *ngIf="value" matSuffix mat-icon-button aria-label="Clear">
+            <mat-icon>close</mat-icon>
+        </button>
+    </mat-form-field>
+</div>
+
+<div>
+    <mat-form-field class="example-form-field" appearance="fill">
+        <mat-label>Descuento</mat-label>
+        <input matInput type="text" [(ngModel)]="dataProduct.discount">
+        <button *ngIf="value" matSuffix mat-icon-button aria-label="Clear">
+            <mat-icon>close</mat-icon>
+        </button>
+    </mat-form-field>
+</div>
+
+<div>
+    <mat-form-field class="example-form-field" appearance="fill">
+        <mat-label>Cantidad</mat-label>
+        <input matInput type="text" [(ngModel)]="dataProduct.stock">
+        <button *ngIf="value" matSuffix mat-icon-button aria-label="Clear">
+            <mat-icon>close</mat-icon>
+        </button>
+    </mat-form-field>
+    <div>
+        <mat-form-field class="example-form-field" appearance="fill">
+            <mat-label>Cars</mat-label>
+            <select matNativeControl required>
+                <option value="volvo">Volvo</option>
+                <option value="saab">Saab</option>
+                <option value="mercedes">Mercedes</option>
+                <option value="audi">Audi</option>
+            </select>
+        </mat-form-field>
+    </div>
+</div>
+<button (click)="printProduct()">
+    update
+</button>
+
+
+<!--
+-->
