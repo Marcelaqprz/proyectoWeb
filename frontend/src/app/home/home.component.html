@@ -1,26 +1,20 @@
 <ng-template #content let-modal>
   <div class="modal-header">
     <h4 style="margin: 0rem">Iniciar sesión</h4>
-    <button
-      type="button"
-      class="btn-close"
-      (click)="modal.dismiss('Cross click')"
-    ></button>
+    <button type="button" class="btn-close" (click)="modal.dismiss('Cross click')"></button>
   </div>
   <div class="modal-body">
     Correo:
     <mat-form-field appearance="fill">
       <mat-label>Correo</mat-label>
-      <input
-      type="email" matInput placeholder="Ex. test@gmail.com"  [(ngModel)]="email" name="email"
-        required
-      />
+      <input type="email" matInput placeholder="Ex. test@gmail.com" [(ngModel)]="email" name="email" required />
     </mat-form-field>
     <br />
     Contraseña:
     <mat-form-field appearance="fill">
       <mat-label>Contraseña </mat-label>
-      <input type="password" matInput placeholder="Ex. test@gmail.com"  [(ngModel)]="password" name="password" required />
+      <input type="password" matInput placeholder="Ex. test@gmail.com" [(ngModel)]="password" name="password"
+        required />
     </mat-form-field>
   </div>
   <div class="modal-footer">
@@ -38,7 +32,7 @@
     <button mat-icon-button class="toolbar-icon" [matMenuTriggerFor]="menu">
       <mat-icon>menu</mat-icon>
       <mat-menu #menu>
-        <button mat-menu-item (click)="open(content)">Iniciar sesión</button>
+        <button mat-menu-item (click)="open(content)" [ngStyle]="{'display': !isLoggedIn?'block': 'none'}">Iniciar sesión</button>
         <button mat-menu-item>Carrito de compras</button>
         <button mat-menu-item>Mis productos</button>
       </mat-menu>
@@ -51,39 +45,27 @@
     <mat-chip-list class="chip-container">
       <mat-chip class="chip-inicio" style="background-color: #ffe26a">
         <mat-chip-avatar>
-          <img
-            src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f9/Percent_18e.svg/220px-Percent_18e.svg.png"
-            class="chip-img"
-          />
+          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f9/Percent_18e.svg/220px-Percent_18e.svg.png"
+            class="chip-img" />
         </mat-chip-avatar>
         Descuentos
       </mat-chip>
       <mat-chip class="chip-inicio" style="background-color: #ffe26a">
         <mat-chip-avatar>
-          <img
-            src="https://as2.ftcdn.net/v2/jpg/01/13/23/69/1000_F_113236990_g88PIaU84wrxe6IJOUa4yikuvswFpACM.jpg"
-            class="chip-img"
-          />
+          <img src="https://as2.ftcdn.net/v2/jpg/01/13/23/69/1000_F_113236990_g88PIaU84wrxe6IJOUa4yikuvswFpACM.jpg"
+            class="chip-img" />
         </mat-chip-avatar>
         Hombre
       </mat-chip>
       <mat-chip class="chip-inicio" style="background-color: #ffe26a">
         <mat-chip-avatar>
-          <img
-            src="http://simpleicon.com/wp-content/uploads/women.png"
-            class="chip-img"
-          />
+          <img src="http://simpleicon.com/wp-content/uploads/women.png" class="chip-img" />
         </mat-chip-avatar>
         Mujer
       </mat-chip>
     </mat-chip-list>
     <app-grid></app-grid>
-    <mat-paginator
-      [length]="2"
-      [pageSize]="10"
-      aria-label="Select page"
-      style="background-color: #c7ddcc"
-    >
+    <mat-paginator [length]="2" [pageSize]="10" aria-label="Select page" style="background-color: #c7ddcc">
     </mat-paginator>
   </ng-container>
 </ng-container>
