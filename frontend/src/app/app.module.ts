@@ -29,6 +29,8 @@ import { environment } from 'src/environments/environment';
 import { CarritoComponent } from './carrito/carrito.component';
 import { MatButtonModule } from '@angular/material/button';
 import { ProductoCarritoComponent } from './producto-carrito/producto-carrito.component';
+import { RegistroUsuarioComponent } from './registro-usuario/registro-usuario.component';
+import { MatButtonToggleModule } from '@angular/material/button-toggle';
 
 @NgModule({
   declarations: [
@@ -39,6 +41,7 @@ import { ProductoCarritoComponent } from './producto-carrito/producto-carrito.co
     CreararticulosComponent,
     CarritoComponent,
     ProductoCarritoComponent,
+    RegistroUsuarioComponent,
   ],
   imports: [
     BrowserModule,
@@ -61,6 +64,7 @@ import { ProductoCarritoComponent } from './producto-carrito/producto-carrito.co
     HttpClientModule,
     MatInputModule,
     MatButtonModule,
+    MatButtonToggleModule
   ],
   providers: [],
   bootstrap: [AppComponent],
