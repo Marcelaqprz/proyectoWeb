@@ -21,17 +21,25 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { GridComponent } from './grid/grid.component';
 import { ArticuloComponent } from './articulo/articulo.component';
 import { HttpClientModule } from '@angular/common/http';
-import {MatInputModule} from '@angular/material/input';
+import { MatInputModule } from '@angular/material/input';
 import { CreararticulosComponent } from './creararticulos/creararticulos.component';
 //import { AngularFireModule } from '@angular/fire';
 //import { AngularFireDatabaseModule } from '@angular/fire/database';
 import { environment } from 'src/environments/environment';
-
-
-
+import { CarritoComponent } from './carrito/carrito.component';
+import { MatButtonModule } from '@angular/material/button';
+import { ProductoCarritoComponent } from './producto-carrito/producto-carrito.component';
 
 @NgModule({
-  declarations: [AppComponent, HomeComponent, GridComponent, ArticuloComponent, CreararticulosComponent],
+  declarations: [
+    AppComponent,
+    HomeComponent,
+    GridComponent,
+    ArticuloComponent,
+    CreararticulosComponent,
+    CarritoComponent,
+    ProductoCarritoComponent,
+  ],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -51,7 +59,8 @@ import { environment } from 'src/environments/environment';
     FormsModule,
     NgbModule,
     HttpClientModule,
-    MatInputModule
+    MatInputModule,
+    MatButtonModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
