@@ -33,7 +33,6 @@ function createUser(user) {
     };
     client.db(dbName).collection(collectionName).insertOne(User)
     //getAllUsers();
-    return User;
 }
 
 async function getUserByEmail(email) {
@@ -51,7 +50,7 @@ async function deleteUserByEmail(email) {
     return user
 }
 
-async function UpdateUser(user) {
+async function UpdateUserByEmail(user) {
     //replaceOne
     const res = await client.db(dbName).collection(collectionName).replaceOne({ id: user.id }, user)
     return res
@@ -76,7 +75,6 @@ const collectionProduct = "Products"
 
 function createProduct(product) {
     client.db(dbName).collection(collectionProduct).insertOne(product)
-    return product
 }
 
 async function deleteProductByName(name) { //Delete Product
@@ -100,14 +98,44 @@ async function getProductByName(name) {
     return product
 }
 
-async function UpdateProduct(product) {
+async function UpdateProductByName(product) {
     const res = await client.db(dbName).collection(collectionProduct).replaceOne({ id: product.id }, product);
     console.log(res)
-    return res
 }
+
+// Functions to carrito
+
+const carritoProducts = "carrito"
+
+function createCarrito(product) {
+    client.db(dbName).collection(carritoProducts).insertOne(product)
+}
+
+async function deleteProductByIDCarrito(id) { //Delete Product
+    let pr = await client.db(dbName).collection(carritoProducts).deleteOne(
+        { idcarrito: parseInt(id) }
+    );
+    console.log(pr)
+    return pr
+}
+
+// Functions to FactsSales
+
+const collectionFactsSales = "FactsSales"
+
+function createFact(sale) {
+    client.db(dbName).collection(collectionFactsSales).insertOne({sale})
+}
+
+function getallFactSales() {
+    return client.db(dbName).collection(collectionFactsSales).find({}).toArray();
+}
+
 
 module.exports = {
     loginStatus: loginStatus,
+    createCarrito: createCarrito,
+    deleteProductByIDCarrito: deleteProductByIDCarrito,
     getAllUsers: getAllUsers,
     createUser: createUser,
     getUserByEmail: getUserByEmail,
@@ -116,6 +144,8 @@ module.exports = {
     getProductByName: getProductByName,
     deleteProductByName: deleteProductByName,
     createProduct: createProduct,
-    UpdateUser: UpdateUser,
-    UpdateProduct: UpdateProduct,
+    UpdateUserByEmail: UpdateUserByEmail,
+    UpdateProductByName:UpdateProductByName,
+    createFact: createFact,
+    getallFactSales: getallFactSales,
 }
