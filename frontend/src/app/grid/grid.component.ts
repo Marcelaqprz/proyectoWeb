@@ -23,7 +23,7 @@ export class GridComponent implements OnInit {
     this.breakpoint = target;
   }
   onResize(event) {
-    let target: number = 6;
+    let target: number = 5;
     if (event.target.innerWidth <= 1200) target = 3;
     if (event.target.innerWidth <= 900) target = 2;
     if (event.target.innerWidth <= 750) target = 1;
