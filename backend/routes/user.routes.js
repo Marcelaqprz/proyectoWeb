@@ -21,7 +21,7 @@ router.delete("/deleteuser", async (req, res, next)=>{
 router.post("/upuseremail", async (req, res, next)=>{
    // console.log(req.body)
     try {
-        await db.UpdateUser(req.body)
+        await db.UpdateUserByEmail(req.body)
         res.send({
             data:"ok"
         })
@@ -74,11 +74,40 @@ router.get("/getallproducts", async (req, res, next)=>{
 
 router.post("/upproductname", async (req, res, next)=>{
     try {
-        await db.UpdateProduct(req.body)
+        await db.UpdateProductByName(req.body)
         res.sendStatus(200)
       } catch (error) {
         console.log('error')
         res.sendStatus(404)
       }
 })
-module.exports = router;
+
+
+// Carrito
+
+router.post("/createcarrito", async (req, res, next)=>{
+    const carrito = req.body
+    await db.createCarrito(carrito)
+    res.sendStatus(200)
+})
+
+router.delete("/dproductid", async (req, res, next)=>{
+    console.log(req.query.id)
+    await db.deleteProductByIDCarrito(req.query.id)
+    res.sendStatus(200)
+})
+
+
+
+// FactsSales
+
+router.post("/createfactsale", async (req, res, next)=>{
+    const fact = req.body
+    await db.createFact(fact)
+    res.sendStatus(200)
+})
+
+router.get("/getallfactsale", async (req, res, next)=>{
+    const gfs = await db.getallFactSales()
+    res.send(gfs)
+})

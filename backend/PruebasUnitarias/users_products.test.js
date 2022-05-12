@@ -1,6 +1,6 @@
-const dbDatabase = require('./db.database');
+const products = require('./users_products.js');
 
-describe('dbDatabase', () => {
+describe('products', () => {
     const expectedUser = {
         username: "TestUser",
         email: "testuser@gmail.com",
@@ -28,7 +28,7 @@ describe('dbDatabase', () => {
                 type_user: 0
             };
             //Act
-            const user = dbDatabase.createUser(newUser)
+            const user = products.createUser(newUser)
             //Assert
             expect(user).toEqual(expectedUser);
         })
@@ -39,7 +39,7 @@ describe('dbDatabase', () => {
             //Arrange
             const email = 'testuser@gmail.com';
             //Act
-            const user = dbDatabase.getUserByEmail(email)
+            const user = products.getUserByEmail(email)
             //Assert
             expect(user).toEqual(expectedUser);
         })
@@ -50,7 +50,7 @@ describe('dbDatabase', () => {
             //Arrange
             const email = 'testuser@gmail.com';
             //Act
-            const user = dbDatabase.deleteUserByEmail(email)
+            const user = products.deleteUserByEmail(email)
             //Assert
             expect(user).toEqual(expectedUser);
         })
@@ -71,7 +71,7 @@ describe('dbDatabase', () => {
                 type_user: 0
             };
             //Act
-            const user = dbDatabase.UpdateUser(updatedUser)
+            const user = products.UpdateUser(updatedUser)
             //Assert
             expect(user).toEqual(updatedUser);
         })
@@ -92,7 +92,7 @@ describe('dbDatabase', () => {
                 tag:            "HOMBRE",
             }
             //Act
-            const product = dbDatabase.createProduct(newProduct)
+            const product = products.createProduct(newProduct)
             //Assert
             expect(product).toEqual(newProduct);
         })
@@ -103,7 +103,7 @@ describe('dbDatabase', () => {
             //Arrange
             const productName = "Mochila"
             //Act
-            const product = dbDatabase.deleteProductByName(productName)
+            const product = products.deleteProductByName(productName)
             //Assert
             expect(product.name).toEqual(productName);
         })
@@ -114,7 +114,7 @@ describe('dbDatabase', () => {
             //Arrange
             const productName = "Mochila"
             //Act
-            const product = dbDatabase.getProductByName(productName)
+            const product = products.getProductByName(productName)
             //Assert
             expect(product.name).toEqual(productName);
         })
@@ -135,15 +135,9 @@ describe('dbDatabase', () => {
                 tag:            "HOMBRE",
             }
             //Act
-            const product = dbDatabase.UpdateProduct(newProduct)
+            const product = products.UpdateProduct(newProduct)
             //Assert
             expect(product).toEqual(newProduct);
         })
     })
-
-
-
-
-
-
 })
