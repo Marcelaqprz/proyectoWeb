@@ -55,41 +55,24 @@
 <ng-container class="body-inicio">
   <ng-container>
     <mat-chip-list class="chip-container">
-      <mat-chip class="chip-inicio">
-        <mat-chip-avatar>
-          <img
-            src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f9/Percent_18e.svg/220px-Percent_18e.svg.png"
-            class="chip-img"
-          />
-        </mat-chip-avatar>
+      <mat-chip class="chip-inicio" style="background-color: white">
         Descuentos
       </mat-chip>
-      <mat-chip class="chip-inicio">
-        <mat-chip-avatar>
-          <img
-            src="https://as2.ftcdn.net/v2/jpg/01/13/23/69/1000_F_113236990_g88PIaU84wrxe6IJOUa4yikuvswFpACM.jpg"
-            class="chip-img"
-          />
-        </mat-chip-avatar>
+      <mat-chip class="chip-inicio" style="background-color: white">
         Hombre
       </mat-chip>
-      <mat-chip class="chip-inicio">
-        <mat-chip-avatar>
-          <img
-            src="http://simpleicon.com/wp-content/uploads/women.png"
-            class="chip-img"
-          />
-        </mat-chip-avatar>
+      <mat-chip class="chip-inicio" style="background-color: white">
         Mujer
       </mat-chip>
     </mat-chip-list>
     <app-grid></app-grid>
     <div class="footer-container">
-      <p id="fraseAPI"></p>
+      <p id="fraseAPI">You don't understand! I coulda had class. I coulda been a contender. I could've been somebody, instead of a bum, which is what I am.</p>
       <mat-paginator
         [length]="2"
         [pageSize]="10"
         aria-label="Select page"
+        style="background-color: white"
       ></mat-paginator>
     </div>
   </ng-container>
