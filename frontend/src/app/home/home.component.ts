@@ -38,7 +38,7 @@ export class HomeComponent implements OnInit {
   };
   ngOnInit(): void {
     this.isLoggedIn = this.authservice.isLoggedIn();
-    /* const options = {
+    const options = {
       method: 'POST',
       url: 'https://andruxnet-random-famous-quotes.p.rapidapi.com/',
       params: { cat: 'movies', count: '1' },
@@ -54,7 +54,7 @@ export class HomeComponent implements OnInit {
       })
       .catch(function (error) {
         console.error(error);
-      }); */
+      });
   }
 
   open(content) {
