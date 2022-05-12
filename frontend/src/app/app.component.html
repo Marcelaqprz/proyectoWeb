@@ -24,9 +24,13 @@
       <mat-label>Contraseña </mat-label>
       <input matInput required />
     </mat-form-field>
+    <br />
+    <button type="button" class="btn btn-danger" (click)="openGoogleLogin()">
+      Login with Google
+    </button>
   </div>
   <div class="modal-footer">
-    No tiene cuenta? <a href="./registro">Registro</a>
+    No tiene cuenta? <a href="./registroUsuario">Registro</a>
     <div class="modal-footer-spacer"></div>
     <button class="cancelar-btn" mat-button>Cancelar</button>
     <button class="inicio-btn" mat-button>Ingresar</button>
@@ -35,13 +39,15 @@
 
 <mat-toolbar class="toolbar-inicio">
   <mat-toolbar-row>
-    <button mat-button class="btn-home">DABO</button>
+    <button mat-button class="btn-home" (click)="openHome()">DABO</button>
     <span class="toolbar-spacer"></span>
     <button mat-icon-button class="toolbar-icon" [matMenuTriggerFor]="menu">
       <mat-icon>menu</mat-icon>
       <mat-menu #menu>
         <button mat-menu-item (click)="open(content)">Iniciar sesión</button>
-        <button mat-menu-item>Carrito de compras</button>
+        <button mat-menu-item (click)="openCarrito()">
+          Carrito de compras
+        </button>
         <button mat-menu-item>Mis productos</button>
       </mat-menu>
     </button>
