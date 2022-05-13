@@ -31,6 +31,9 @@ import { MatButtonModule } from '@angular/material/button';
 import { ProductoCarritoComponent } from './producto-carrito/producto-carrito.component';
 import { RegistroUsuarioComponent } from './registro-usuario/registro-usuario.component';
 import { MatButtonToggleModule } from '@angular/material/button-toggle';
+import { MatRadioModule } from '@angular/material/radio';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { GoogleLoginComponent } from './google-login/google-login.component';
 
 
 @NgModule({
@@ -43,6 +46,7 @@ import { MatButtonToggleModule } from '@angular/material/button-toggle';
     CarritoComponent,
     ProductoCarritoComponent,
     RegistroUsuarioComponent,
+    GoogleLoginComponent,
   ],
   imports: [
     BrowserModule,
@@ -65,7 +69,9 @@ import { MatButtonToggleModule } from '@angular/material/button-toggle';
     HttpClientModule,
     MatInputModule,
     MatButtonModule,
-    MatButtonToggleModule
+    MatButtonToggleModule,
+    MatRadioModule,
+    MatProgressSpinnerModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

@@ -1,11 +1,118 @@
+<ng-template #content let-modal class="menu-desplegable">
+  <div class="modal-header">
+    <h4 style="margin: 0rem">Elige un metodo de pago</h4>
+    <button
+      type="button"
+      class="btn-close"
+      (click)="modal.dismiss('Cross click')"
+    ></button>
+  </div>
+  <div class="modal-body">
+    <mat-radio-group aria-label="Select an option">
+      <mat-radio-button value="1">
+        <div class="grid">
+          <div class="img-container">
+            <img src="../../assets/img/visa_logo.jpg" />
+          </div>
+          <div class="option-container">
+            <p>XXXX-XXXX-XXXX-3852</p>
+          </div>
+        </div>
+      </mat-radio-button>
+      <mat-radio-button value="2" style="display: none"
+        ><div class="grid">
+          <div class="img-container">
+            <img src="../../assets/img/visa_logo.jpg" />
+          </div>
+          <div class="option-container">
+            <p>XXXX-XXXX-XXXX-1234</p>
+          </div>
+        </div></mat-radio-button
+      >
+    </mat-radio-group>
+  </div>
+  <div class="modal-footer">
+    <button
+      class="cancelar-btn"
+      (click)="modal.dismiss('Cross click')"
+      mat-button
+    >
+      Cancelar
+    </button>
+    <button
+      class="pagar-modal-btn"
+      (click)="
+        modal.dismiss('Cross click'); mockPayment(procesar, transaccionCompleta)
+      "
+      mat-button
+    >
+      Pagar
+    </button>
+  </div>
+</ng-template>
+
+<ng-template #procesar let-modal class="pago-modal">
+  <div class="modal-header">
+    <h4 style="margin: 0rem">Procesando...</h4>
+    <button
+      type="button"
+      class="btn-close"
+      (click)="modal.dismiss('Cross click')"
+    ></button>
+  </div>
+  <div class="modal-body">
+    <div
+      class="grid"
+      style="display: grid; grid-template-columns: auto 30% auto"
+    >
+      <div></div>
+      <mat-spinner color="warn"></mat-spinner>
+      <div></div>
+    </div>
+  </div>
+  <div class="modal-footer"></div>
+</ng-template>
+
+<ng-template #transaccionFallida let-modal class="pago-modal">
+  <div class="modal-header">
+    <h4 style="margin: 0rem">Error</h4>
+    <button
+      type="button"
+      class="btn-close"
+      (click)="modal.dismiss('Cross click')"
+    ></button>
+  </div>
+  <div class="modal-body">
+    <p>Transaccion fallida!</p>
+  </div>
+  <div class="modal-footer"></div>
+</ng-template>
+
+<ng-template #transaccionCompleta let-modal class="pago-modal">
+  <div class="modal-header">
+    <h4 style="margin: 0rem">Completado</h4>
+    <button
+      type="button"
+      class="btn-close"
+      (click)="modal.dismiss('Cross click'); limpiarCarrito()"
+    ></button>
+  </div>
+  <div class="modal-body">
+    <p>Transaccion Exitosa!</p>
+  </div>
+  <div class="modal-footer"></div>
+</ng-template>
+
 <ng-container class="page-container">
   <div class="page-container">
     <div></div>
-    <div>
+    <div id="listaProductos">
       <app-producto-carrito></app-producto-carrito>
     </div>
     <div>
-        <button mat-raised-button class="pagar-btn">Lo quiero!</button>
+      <button mat-raised-button class="pagar-btn" (click)="open(content)">
+        Lo quiero!
+      </button>
     </div>
   </div>
   <div></div>
