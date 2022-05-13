@@ -45,8 +45,9 @@ router.post("/login", async (req, res, next)=>{
 
 router.post("/createuser", async (req, res, next) =>{
     const user = req.body
+    console.log(user)
     await db.createUser(user)
-    res.sendStatus(200)    
+    //res.sendStatus(200)    
 })
 
 // Products
@@ -111,3 +112,5 @@ router.get("/getallfactsale", async (req, res, next)=>{
     const gfs = await db.getallFactSales()
     res.send(gfs)
 })
+
+module.exports = router;
