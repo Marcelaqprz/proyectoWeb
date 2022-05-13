@@ -8,4 +8,11 @@ export class FormatService {
 
   constructor() { }
   getDateFormat() { return formatDate(Date.now(), 'yyyy-MM-dd', 'en-US') }
+
+  OPTION = [
+    "HOMBRE",
+    "MUJER",
+    "OFERTA"
+  ]
+
 }

@@ -1,5 +1,6 @@
-import { Component, OnInit, VERSION } from '@angular/core';
+import { Component, Input, OnInit, VERSION } from '@angular/core';
 import dataArticulos from '../../assets/data/data.json';
+import { producto } from '../interface/producto.interface';
 
 @Component({
   selector: 'app-grid',
@@ -7,10 +8,12 @@ import dataArticulos from '../../assets/data/data.json';
   styleUrls: ['./grid.component.sass'],
 })
 export class GridComponent implements OnInit {
+  @Input() productos: producto[] = [];
+
   ngVersion: string = VERSION.full;
   breakpoint: number | undefined;
   data = dataArticulos;
-  constructor() {}
+  constructor() { }
 
   ngOnInit(): void {
     let target: number = 5;
@@ -23,7 +26,9 @@ export class GridComponent implements OnInit {
     this.breakpoint = target;
   }
   onResize(event) {
-    let target: number = 5;
+    let target: number = 4;
+    //if (event.target.innerWidth <= 1600) target = 5;
+    //if (event.target.innerWidth <= 1400) target = 4;
     if (event.target.innerWidth <= 1200) target = 3;
     if (event.target.innerWidth <= 900) target = 2;
     if (event.target.innerWidth <= 750) target = 1;

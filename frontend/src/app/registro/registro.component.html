@@ -1,0 +1,68 @@
+<mat-toolbar class="toolbar-inicio">
+  <mat-toolbar-row>
+    <span>DABO</span>
+    <span class="toolbar-spacer"></span>
+    <h5>Registro de usuario</h5>
+  </mat-toolbar-row>
+</mat-toolbar>
+<div>
+  <form class="example-form">
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>Nombre de usuario</mat-label>
+      <input type="text" matInput placeholder="Ex. ElPepe2000" [(ngModel)]="dataUser.username" name="username" required>
+    </mat-form-field>
+  </form>
+  <form class="example-form">
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>Email</mat-label>
+      <input type="email" matInput [formControl]="emailForm" [errorStateMatcher]="matcher"
+        placeholder="Ex. pat@example.com" [(ngModel)]="dataUser.email" name="email">
+      <mat-hint>Errors appear instantly!</mat-hint>
+      <mat-error *ngIf="emailForm.hasError('email') && !emailForm.hasError('required')">
+        Please enter a valid email address
+      </mat-error>
+      <mat-error *ngIf="emailForm.hasError('required')">
+        Email is <strong>required</strong>
+      </mat-error>
+    </mat-form-field>
+  </form>
+  <form class="example-form">
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>Nombre completo</mat-label>
+      <input type="text" matInput placeholder="Ex. Jose Luis Marciano" [(ngModel)]="dataUser.name" name="name">
+    </mat-form-field>
+  </form>
+  <form class="example-form">
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>Contraseña</mat-label>
+      <input type="password" matInput placeholder="Ex. Abc123" [(ngModel)]="dataUser.password" name="password" required>
+    </mat-form-field>
+  </form>
+  <form class="example-form">
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>Dirección</mat-label>
+      <input type="address" matInput placeholder="Ex. Av. Padre Xavier 007" [(ngModel)]="dataUser.address"
+        name="address" required>
+    </mat-form-field>
+  </form>
+  <form class="example-form">
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>fecha de nacimiento</mat-label>
+      <input type="date" matInput placeholder="Ex. test@gmail.com" [(ngModel)]="dataUser.date_birth" name="date_birth">
+    </mat-form-field>
+  </form>
+  <form>
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>Tipo de usuario</mat-label>
+      <select matNativeControl [(ngModel)]='value' name="tipousuario">
+        <option value=0>Comprador</option>
+        <option value=1>Vendedor</option>
+      </select>
+    </mat-form-field>
+  </form>
+  <div class="button-accept">
+    <button type="button" mat-raised-button color="warn" onclick="window.location.href='home'">Cancelar</button>
+    <button type="button" mat-raised-button color="primary" (click)="CreateUser()"
+      onclick="window.location.href='home'">Crear</button>
+  </div>
+</div>

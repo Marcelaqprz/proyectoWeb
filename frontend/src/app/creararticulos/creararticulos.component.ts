@@ -1,14 +1,9 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { producto } from '../interface/producto.interface';
 import { DatabaseService } from '../services/database.service';
-import { FormControl, Validators } from '@angular/forms';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { AuthService } from '../services/auth.service';
-interface Food {
-  value: string;
-  viewValue: string;
-}
-
+import { FormatService } from '../services/format.service'
 
 @Component({
   selector: 'app-creararticulos',
@@ -17,13 +12,8 @@ interface Food {
   encapsulation: ViewEncapsulation.None,
 })
 export class CreararticulosComponent implements OnInit {
-  foods: Food[] = [
-    {value: 'steak-0', viewValue: 'Steak'},
-    {value: 'pizza-1', viewValue: 'Pizza'},
-    {value: 'tacos-2', viewValue: 'Tacos'},
-  ];
-  value = '';
-  emailForm = new FormControl('', [Validators.required, Validators.email]);
+  value: string[] = this.format.OPTION;
+  
   title = 'Proyecto';
   isLoggedIn = false;
   
@@ -36,12 +26,13 @@ export class CreararticulosComponent implements OnInit {
     id_user_seller: 0,
     discount:       0,
     stock:          0,
-    tag:            '',
+    tag:            'HOMBRE',
   }
 
-  constructor(private user: DatabaseService,
+  constructor(private dataproduct: DatabaseService,
     private modalService: NgbModal,
-    private authservice: AuthService) { }
+    private authservice: AuthService,
+    private format: FormatService) { }
 
   
   ngOnInit(): void {
@@ -55,12 +46,14 @@ export class CreararticulosComponent implements OnInit {
     this.modalService.open(content, { centered: true });
   }
 
-  getErrorMessage() {
-    if (this.emailForm.hasError('required')) {
-      return 'Ingresa un correo';
-    }
-
-    return this.emailForm.hasError('email') ? 'No es un correo valido!' : '';
+  CreateProduct(){
+    this.dataproduct.CreateProduct(this.dataProduct).subscribe({
+      next: (response : any) =>{
+        console.log(response)
+      }
+    })
   }
+
+  
 
 }

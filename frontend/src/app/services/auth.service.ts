@@ -19,9 +19,9 @@ export class AuthService {
     localStorage.clear();
   }
 
-  /*saveAccountNumber(accountNumber: string) {
+  saveAccountNumber(accountNumber: string) {
     localStorage.setItem('numeroCuenta', accountNumber);
-  }*/
+  }
 
   isLoggedIn() {
     return localStorage.getItem('user') ? true : false;

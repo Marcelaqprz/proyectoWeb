@@ -2,14 +2,16 @@
   [cols]="breakpoint"
   rowHeight="550px" 
   (window:resize)="onResize($event)"
+  style="background-color: #c7ddcc;"
 >
-  <mat-grid-tile class="grid-articulo" *ngFor="let item of data">
+  <mat-grid-tile class="grid-articulo" *ngFor="let item of productos">
     <app-articulo
-      [imgSource]="item.Imagen"
-      [titulo]="item.Nombre"
-      [precio]="item.Costo.$numberDouble"
-      [descripcion]="item.Descripcion"
-      [descuento]="item.Descuento.$numberDouble"
+      [producto]="item"
+      [imgSource]="item.imageProduct"
+      [titulo]="item.name"
+      [precio]="item.price.toString()"
+      [descripcion]="item.description"
+      [descuento]="item.discount.toString()"
     ></app-articulo>
   </mat-grid-tile>
 </mat-grid-list>

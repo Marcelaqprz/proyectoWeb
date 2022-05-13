@@ -2,7 +2,7 @@
     <mat-toolbar-row>
         <span>DABO</span>
         <span class="toolbar-spacer"></span>
-        <h5>saludos</h5>
+        <h5>Registro de producto</h5>
     </mat-toolbar-row>
 </mat-toolbar>
 
@@ -12,76 +12,62 @@
     </ng-container>
 </ng-container>-->
 <div>
-    <mat-form-field class="example-form-field" appearance="fill">
-        <mat-label>Nombre de producto</mat-label>
-        <input matInput type="text" [(ngModel)]="dataProduct.name">
-        <button *ngIf="value" matSuffix mat-icon-button aria-label="Clear">
-            <mat-icon>close</mat-icon>
-        </button>
-    </mat-form-field>
-</div>
-<div>
-    <mat-form-field class="example-form-field" appearance="fill">
-        <mat-label>Descripcion</mat-label>
-        <input matInput type="text" [(ngModel)]="dataProduct.description">
-        <button *ngIf="value" matSuffix mat-icon-button aria-label="Clear">
-            <mat-icon>close</mat-icon>
-        </button>
-    </mat-form-field>
-</div>
-
-<div>
-    <mat-form-field class="example-form-field" appearance="fill">
+    <form class="example-form">
+      <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>Marca</mat-label>
+        <input type="text" matInput placeholder="Ex. Levi's" [(ngModel)]="dataProduct.name" name="marca" required>
+      </mat-form-field>
+    </form>
+    <form class="example-form">
+      <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>Descripcion de producto</mat-label>
+        <input type="text" matInput placeholder="Ex. Pantalon blanco para..." [(ngModel)]="dataProduct.description" name="descripcion" required>
+      </mat-form-field>
+    </form>
+    <form class="example-form">
+      <mat-form-field class="example-full-width" appearance="fill">
         <mat-label>Imagen de producto</mat-label>
-        <input matInput type="text" [(ngModel)]="dataProduct.imageProduct">
-        <button *ngIf="value" matSuffix mat-icon-button aria-label="Clear">
-            <mat-icon>close</mat-icon>
-        </button>
-    </mat-form-field>
-</div>
-<div>
-    <mat-form-field class="example-form-field" appearance="fill">
+        <input type="url" matInput placeholder="Ex. https://image..." [(ngModel)]="dataProduct.imageProduct" name="imageurl" required>
+      </mat-form-field>
+    </form>
+    <form class="example-form">
+      <mat-form-field class="example-full-width" appearance="fill">
         <mat-label>Precio</mat-label>
-        <input matInput type="text" [(ngModel)]="dataProduct.price">
-        <button *ngIf="value" matSuffix mat-icon-button aria-label="Clear">
-            <mat-icon>close</mat-icon>
-        </button>
-    </mat-form-field>
-</div>
-
-<div>
-    <mat-form-field class="example-form-field" appearance="fill">
-        <mat-label>Descuento</mat-label>
-        <input matInput type="text" [(ngModel)]="dataProduct.discount">
-        <button *ngIf="value" matSuffix mat-icon-button aria-label="Clear">
-            <mat-icon>close</mat-icon>
-        </button>
-    </mat-form-field>
-</div>
-
-<div>
-    <mat-form-field class="example-form-field" appearance="fill">
-        <mat-label>Cantidad</mat-label>
-        <input matInput type="text" [(ngModel)]="dataProduct.stock">
-        <button *ngIf="value" matSuffix mat-icon-button aria-label="Clear">
-            <mat-icon>close</mat-icon>
-        </button>
-    </mat-form-field>
-    <div>
-        <mat-form-field class="example-form-field" appearance="fill">
-            <mat-label>Cars</mat-label>
-            <select matNativeControl required>
-                <option value="volvo">Volvo</option>
-                <option value="saab">Saab</option>
-                <option value="mercedes">Mercedes</option>
-                <option value="audi">Audi</option>
-            </select>
+        <input type="number" matInput placeholder="Ex. 250" [(ngModel)]="dataProduct.price"
+          name="precio" required>
+      </mat-form-field>
+    </form>
+    <form class="example-form">
+        <mat-form-field class="example-full-width" appearance="fill">
+          <mat-label>Descuento</mat-label>
+          <input type="number" matInput placeholder="Ex. 10" [(ngModel)]="dataProduct.discount"
+            name="descuento" required>
         </mat-form-field>
+      </form>
+      <form class="example-form">
+        <mat-form-field class="example-full-width" appearance="fill">
+          <mat-label>Cantidad de productos</mat-label>
+          <input type="number" matInput placeholder="Ex. 50" [(ngModel)]="dataProduct.stock"
+            name="cantProductos" required>
+        </mat-form-field>
+      </form>
+   <!--<form>
+      <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>Etiqueta</mat-label>
+        <select matNativeControl  name="tipousuario" ngfor="let item of value">
+          <option >{[value]}</option>
+          
+        </select>
+      </mat-form-field>
+    </form>
+-->
+    <div class="button-accept">
+      <button type="button" mat-raised-button color="warn" routerLink="/home">Cancelar</button>
+      <button type="button" mat-raised-button color="primary" (click)="CreateProduct()"
+        routerLink="/home">Crear</button>
     </div>
-</div>
-<button (click)="printProduct()">
-    update
-</button>
+  </div>
+
 
 
 <!--

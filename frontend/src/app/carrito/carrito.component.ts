@@ -1,33 +1,37 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { carrito } from '../interface/carrito.interface';
+import { producto } from '../interface/producto.interface';
+import { CarritoService } from '../services/carrito.service';
 
 @Component({
   selector: 'app-carrito',
   templateUrl: './carrito.component.html',
   styleUrls: ['./carrito.component.sass'],
+  encapsulation: ViewEncapsulation.None
 })
 export class CarritoComponent implements OnInit {
-  constructor(private modalService: NgbModal) {}
+  productos: producto[] = []
+  constructor(
+    private carritoService: CarritoService
+  ) { }
 
-  ngOnInit(): void {}
-
-  open(content) {
-    this.modalService.open(content, { centered: true });
+  getData() {
+    this.productos = this.carritoService.getProductos()
   }
 
-  openTransaccionFallida(content) {
-    this.modalService.open(content, { centered: true });
+  ngOnInit(): void {
+    this.getData()
+    this.getTotal()
   }
 
-  mockPayment(content, target) {
-    this.modalService.open(content, { centered: true });
-    setTimeout(() => {
-      this.modalService.dismissAll();
-      this.openTransaccionFallida(target);
-    }, 2000);
+  suma = 0;
+
+  getTotal() {
+    this.productos.forEach(producto => { this.suma += producto.price });
   }
 
-  limpiarCarrito(){
-    
-  }
+  
+
+
 }

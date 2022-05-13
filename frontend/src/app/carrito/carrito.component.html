@@ -1,119 +1,152 @@
-<ng-template #content let-modal class="menu-desplegable">
-  <div class="modal-header">
-    <h4 style="margin: 0rem">Elige un metodo de pago</h4>
-    <button
-      type="button"
-      class="btn-close"
-      (click)="modal.dismiss('Cross click')"
-    ></button>
-  </div>
-  <div class="modal-body">
-    <mat-radio-group aria-label="Select an option">
-      <mat-radio-button value="1">
-        <div class="grid">
-          <div class="img-container">
-            <img src="../../assets/img/visa_logo.jpg" />
-          </div>
-          <div class="option-container">
-            <p>XXXX-XXXX-XXXX-3852</p>
-          </div>
+<mat-toolbar class="toolbar-inicio">
+    <mat-toolbar-row>
+        <span>DABO</span>
+        <span class="toolbar-spacer"></span>
+        <h5>Registro de usuario</h5>
+    </mat-toolbar-row>
+  </mat-toolbar>
+
+<section>
+
+    <div class="container">
+        <!--Grid row-->
+        <div class="row">
+
+            <!--Grid column-->
+            <div class="col-lg-8">
+                <h2 class="mb-4 border rounded-2 text-center p-3">Your Shopping Cart</h2>
+                <!-- Card -->
+                <!--<h3 class="mb-4">Cart List </h3>-->
+                <div class="card wish-list mb-3" id="cartItemsGrid">
+                    <div class="card-body" id="listCart" >
+
+                        
+                        <div class="row mb-4" *ngFor="let item of productos" >
+                            <div class="col-md-5 col-lg-3 col-xl-3">
+                                <div class="view zoom overlay z-depth-1 rounded mb-3 mb-md-0">
+                                    <!-- Imagen -->
+                                    <img class="img-fluid w-100"
+                                        src= "{{item.imageProduct}}"
+                                        alt="Sample">
+                                </div>
+                            </div>
+                            <div class="col-md-7 col-lg-9 col-xl-9">
+                                <div>
+                                    <div class="d-flex justify-content-between">
+                                        <div>
+                                            <h2>{{item.name}}</h2>
+                                        </div>
+                            
+                                    </div>
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <p class="mb-0"><span><strong id="PriceItemCart">{{item.price}}</strong></span></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <!-- Card -->
+
+                <!-- Card -->
+                <div class="card mb-3">
+                    <div class="card-body">
+
+                        <h5 class="mb-4">Expected shipping delivery</h5>
+
+                        <p class="mb-0"> Thu., 12.03. - Mon., 16.03.</p>
+                    </div>
+                </div>
+                <!-- Card -->
+
+                <!-- Card -->
+                <div class="card mb-3">
+                    <div class="card-body">
+
+                        <h5 class="mb-4">We accept</h5>
+
+                        <img class="mr-2" width="45px"
+                            src="https://mdbootstrap.com/wp-content/plugins/woocommerce-gateway-stripe/assets/images/visa.svg"
+                            alt="Visa">
+                        <img class="mr-2" width="45px"
+                            src="https://mdbootstrap.com/wp-content/plugins/woocommerce-gateway-stripe/assets/images/amex.svg"
+                            alt="American Express">
+                        <img class="mr-2" width="45px"
+                            src="https://mdbootstrap.com/wp-content/plugins/woocommerce-gateway-stripe/assets/images/mastercard.svg"
+                            alt="Mastercard">
+                    </div>
+                </div>
+                <!-- Card -->
+
+            </div>
+            <!--Grid column-->
+
+            <!--Grid column-->
+            <div class="col-lg-4" >
+
+                <!-- Card -->
+                <div class="card mb-3" >
+                    <div class="card-body" >
+
+                        <h5 class="mb-3">The total amount of</h5>
+
+                        <ul class="list-group list-group-flush">
+                            <li
+                                class="list-group-item d-flex justify-content-between align-items-center border-0 px-0 pb-0">
+                                Subtotal
+                                <span id="subTotal">${{suma}}</span>
+                            </li>
+                            <li class="list-group-item d-flex justify-content-between align-items-center px-0">
+                                I.V.A 16%
+                                <span id="ivaCart">Gratis</span>
+                            </li>
+                            <li
+                                class="list-group-item d-flex justify-content-between align-items-center border-0 px-0 mb-3">
+                                <div>
+                                    <strong>TOTAL</strong>
+                                    <strong>
+                                        <p class="mb-0">(including IVA)</p>
+                                    </strong>
+                                </div>
+                                <span><strong id="totalFinal">${{suma*1.16}}</strong></span>
+                            </li>
+                        </ul>
+
+                        <button type="button" data-toggle="modal"
+                        data-target="#deleteFormModalCart" class="btn btn-primary btn-block waves-effect waves-light">Pay now</button>
+
+                    </div>
+                </div>
+                <!-- Card -->
+
+                <!-- Card -->
+                <!--<div class="card mb-3">
+                    <div class="card-body">
+
+                        <a class="dark-grey-text d-flex justify-content-between" data-toggle="collapse"
+                            href="#collapseExample1" aria-expanded="false" aria-controls="collapseExample1">
+                            Add a discount code (optional)
+                            <span><i class="fas fa-chevron-down pt-1"></i></span>
+                        </a>
+
+                        <div class="collapse" id="collapseExample1">
+                            <div class="mt-3">
+                                <div class="md-form md-outline mb-0">
+                                    <input type="text" id="discount-code1" class="form-control font-weight-light"
+                                        placeholder="Enter discount code">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>-->
+                <!-- Card -->
+
+            </div>
+            <!--Grid column-->
+
         </div>
-      </mat-radio-button>
-      <mat-radio-button value="2" style="display: none"
-        ><div class="grid">
-          <div class="img-container">
-            <img src="../../assets/img/visa_logo.jpg" />
-          </div>
-          <div class="option-container">
-            <p>XXXX-XXXX-XXXX-1234</p>
-          </div>
-        </div></mat-radio-button
-      >
-    </mat-radio-group>
-  </div>
-  <div class="modal-footer">
-    <button
-      class="cancelar-btn"
-      (click)="modal.dismiss('Cross click')"
-      mat-button
-    >
-      Cancelar
-    </button>
-    <button
-      class="pagar-modal-btn"
-      (click)="
-        modal.dismiss('Cross click'); mockPayment(procesar, transaccionCompleta)
-      "
-      mat-button
-    >
-      Pagar
-    </button>
-  </div>
-</ng-template>
-
-<ng-template #procesar let-modal class="pago-modal">
-  <div class="modal-header">
-    <h4 style="margin: 0rem">Procesando...</h4>
-    <button
-      type="button"
-      class="btn-close"
-      (click)="modal.dismiss('Cross click')"
-    ></button>
-  </div>
-  <div class="modal-body">
-    <div
-      class="grid"
-      style="display: grid; grid-template-columns: auto 30% auto"
-    >
-      <div></div>
-      <mat-spinner color="warn"></mat-spinner>
-      <div></div>
+        <!--Grid row-->
     </div>
-  </div>
-  <div class="modal-footer"></div>
-</ng-template>
-
-<ng-template #transaccionFallida let-modal class="pago-modal">
-  <div class="modal-header">
-    <h4 style="margin: 0rem">Error</h4>
-    <button
-      type="button"
-      class="btn-close"
-      (click)="modal.dismiss('Cross click')"
-    ></button>
-  </div>
-  <div class="modal-body">
-    <p>Transaccion fallida!</p>
-  </div>
-  <div class="modal-footer"></div>
-</ng-template>
-
-<ng-template #transaccionCompleta let-modal class="pago-modal">
-  <div class="modal-header">
-    <h4 style="margin: 0rem">Completado</h4>
-    <button
-      type="button"
-      class="btn-close"
-      (click)="modal.dismiss('Cross click'); limpiarCarrito()"
-    ></button>
-  </div>
-  <div class="modal-body">
-    <p>Transaccion Exitosa!</p>
-  </div>
-  <div class="modal-footer"></div>
-</ng-template>
-
-<ng-container class="page-container">
-  <div class="page-container">
-    <div></div>
-    <div id="listaProductos">
-      <app-producto-carrito></app-producto-carrito>
-    </div>
-    <div>
-      <button mat-raised-button class="pagar-btn" (click)="open(content)">
-        Lo quiero!
-      </button>
-    </div>
-  </div>
-  <div></div>
-</ng-container>
+</section>
+<!--Section: Block Content-->
