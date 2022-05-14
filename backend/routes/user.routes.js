@@ -6,6 +6,7 @@ const db = require('../database/db.database')
 router.get("/getallusers", async (req, res, next)=>{
    const usuarios = await db.getAllUsers()
    res.send(usuarios)
+   //console.log(usuarios)
 })
 router.get("/getuseremail", async (req, res, next)=>{
     console.log(req.query.email)
@@ -47,7 +48,7 @@ router.post("/createuser", async (req, res, next) =>{
     const user = req.body
     console.log(user)
     await db.createUser(user)
-    //res.sendStatus(200)    
+    res.sendStatus(200)    
 })
 
 // Products
@@ -96,21 +97,6 @@ router.delete("/dproductid", async (req, res, next)=>{
     console.log(req.query.id)
     await db.deleteProductByIDCarrito(req.query.id)
     res.sendStatus(200)
-})
-
-
-
-// FactsSales
-
-router.post("/createfactsale", async (req, res, next)=>{
-    const fact = req.body
-    await db.createFact(fact)
-    res.sendStatus(200)
-})
-
-router.get("/getallfactsale", async (req, res, next)=>{
-    const gfs = await db.getallFactSales()
-    res.send(gfs)
 })
 
 module.exports = router;
