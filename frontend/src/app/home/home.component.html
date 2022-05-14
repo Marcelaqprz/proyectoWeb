@@ -27,15 +27,15 @@
 
 <mat-toolbar class="toolbar-inicio">
   <mat-toolbar-row>
-    <span>DABO</span>
+    <a >DABO</a>
     <span class="toolbar-spacer"></span>
     <button mat-icon-button class="toolbar-icon" [matMenuTriggerFor]="menu">
       <mat-icon>menu</mat-icon>
       <mat-menu #menu>
         <button mat-menu-item (click)="open(content)" [ngStyle]="{'display': !isLoggedIn?'block': 'none'}">Iniciar sesión</button>
         <button mat-menu-item (click)="logOutUser()" [ngStyle]="{'display': isLoggedIn?'block': 'none'}">Cerrar sesión</button>
-        <button mat-menu-item routerLink="/carrito">Carrito de compras</button>
-        <button mat-menu-item routerLink="/crearproducto">Mis productos</button>
+        <button mat-menu-item routerLink="/carrito" [ngStyle]="{'display': isLoggedIn?'block': 'none'}">Carrito de compras</button>
+        <button mat-menu-item routerLink="/crearproducto" [ngStyle]="{'display': isLoggedIn?'block': 'none'}">Mis productos</button>
       </mat-menu>
     </button>
   </mat-toolbar-row>
