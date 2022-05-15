@@ -100,7 +100,7 @@
  *          description: A successful response
  * /user/dproductid:
  *  delete:
- *    description: create carrito
+ *    description: delete product by id in carrito
  *    parameters:
  *      - in: idproduct
  *    responses:
