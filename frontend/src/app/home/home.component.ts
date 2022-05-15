@@ -6,6 +6,8 @@ import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { AuthService } from '../services/auth.service';
 import { producto } from '../interface/producto.interface';
 import { Router } from '@angular/router';
+import  axios  from 'axios';
+
 @Component({
   selector: 'app-root',
   templateUrl: './home.component.html',
@@ -34,6 +36,24 @@ export class HomeComponent implements OnInit {
     this.isLoggedIn = this.authservice.isLoggedIn()
     console.log(this.authservice.isLoggedIn())
     this.getAllProducts()
+
+    /* const options = {
+      method: 'POST',
+      url: 'https://andruxnet-random-famous-quotes.p.rapidapi.com/',
+      params: { cat: 'movies', count: '1' },
+      headers: {
+        'X-RapidAPI-Host': 'andruxnet-random-famous-quotes.p.rapidapi.com',
+        'X-RapidAPI-Key': 'fe65570658mshf2255ace942242cp1a12c2jsn8a2636443fca',
+      },
+    };
+    axios
+      .request(options)
+      .then(function (response) {
+        document.getElementById('fraseAPI').innerHTML = response.data[0].quote;
+      })
+      .catch(function (error) {
+        console.error(error);
+      }); */
   }
 
   open(content) {

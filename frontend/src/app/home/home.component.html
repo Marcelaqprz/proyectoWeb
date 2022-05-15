@@ -23,12 +23,18 @@
       </mat-chip>
     </mat-chip-list>-->
     <app-grid [productos]="productos"></app-grid>
-    <mat-paginator
-      [length]="2"
-      [pageSize]="10"
-      aria-label="Select page"
-      style="background-color: white"
-    >
-    </mat-paginator>
+    <div class="footer-container">
+      <div class="footer-label">
+        Frase del día
+        <p id="fraseAPI"></p>
+      </div>
+      <mat-paginator
+        [length]="2"
+        [pageSize]="10"
+        aria-label="Select page"
+        style="background-color: white"
+      >
+      </mat-paginator>
+    </div>
   </ng-container>
 </ng-container>
