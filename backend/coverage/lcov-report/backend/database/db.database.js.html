@@ -1,0 +1,399 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for backend/database/db.database.js</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="..\..\prettify.css" />
+    <link rel="stylesheet" href="..\..\base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(..\..\sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="..\..\index.html">All files</a> / <a href="index.html">backend/database</a> db.database.js
+    </h1>
+    <div class='clearfix'>
+    </div>
+  </div>
+  <div class='status-line low'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">/* connect to MongoDB*/
+const { MongoClient } = <span class="cstat-no" title="statement not covered" >require("mongodb");</span>
+&nbsp;
+// Replace the following with your Atlas connection string  
+const url = <span class="cstat-no" title="statement not covered" >'mongodb+srv://proyectoweb:proyecto123321@cluster0.exzs0.mongodb.net/myFirstDatabase?retryWrites=true&amp;w=majority';</span>
+const client = <span class="cstat-no" title="statement not covered" >new MongoClient(url);</span>
+const dbName = <span class="cstat-no" title="statement not covered" >"proyecto_web_pae";</span>
+const collectionName = <span class="cstat-no" title="statement not covered" >"usuarios"</span>
+<span class="cstat-no" title="statement not covered" >client.connect();</span>
+&nbsp;
+const db = <span class="cstat-no" title="statement not covered" >client;</span>
+<span class="cstat-no" title="statement not covered" >db.on("error", console.error.bind(console, "connection error: "));</span>
+<span class="cstat-no" title="statement not covered" >db.once("open", <span class="fstat-no" title="function not covered" >fu</span>nction () {</span>
+<span class="cstat-no" title="statement not covered" >    console.log("Connected successfully - a huevo que jala");</span>
+});
+&nbsp;
+&nbsp;
+function <span class="fstat-no" title="function not covered" >getAllUsers(</span>) {
+<span class="cstat-no" title="statement not covered" >    return client.db(dbName).collection(collectionName).find({}).toArray();</span>
+}
+&nbsp;
+function <span class="fstat-no" title="function not covered" >createUser(</span>user) {
+    const User = <span class="cstat-no" title="statement not covered" >{</span>
+        username: user.username,
+        email: user.email,
+        name: user.name,
+        id: user.id,
+        password: user.password,
+        address: user.address,
+        reg_date: user.reg_date,
+        date_birth: user.date_birth,
+        type_user: user.type_user
+    };
+<span class="cstat-no" title="statement not covered" >    client.db(dbName).collection(collectionName).insertOne(User)</span>
+    //getAllUsers();
+}
+&nbsp;
+async function <span class="fstat-no" title="function not covered" >getUserByEmail(</span>email) {
+&nbsp;
+    let user = <span class="cstat-no" title="statement not covered" >await client.db(dbName).collection(collectionName).findOne(</span>
+        { email: `${email}` }
+    );
+    //console.log('Resultado de busqueda')
+    //console.log(user)
+<span class="cstat-no" title="statement not covered" >    return user</span>
+}
+&nbsp;
+async function <span class="fstat-no" title="function not covered" >deleteUserByEmail(</span>email) {
+    const user = <span class="cstat-no" title="statement not covered" >await client.db(dbName).collection(collectionName).deleteOne({ email: `${email}` })</span>
+<span class="cstat-no" title="statement not covered" >    return user</span>
+}
+&nbsp;
+async function <span class="fstat-no" title="function not covered" >UpdateUserByEmail(</span>user) {
+    //replaceOne
+    const res = <span class="cstat-no" title="statement not covered" >await client.db(dbName).collection(collectionName).replaceOne({ id: user.id }, user)</span>
+<span class="cstat-no" title="statement not covered" >    return res</span>
+}
+&nbsp;
+async function <span class="fstat-no" title="function not covered" >loginStatus(</span>email, password){
+    let user = <span class="cstat-no" title="statement not covered" >await client.db(dbName).collection(collectionName).findOne(</span>
+        { email: `${email}`, password: `${password}` }
+    );
+<span class="cstat-no" title="statement not covered" >    if(user)</span>
+<span class="cstat-no" title="statement not covered" >        return user</span>
+    else
+<span class="cstat-no" title="statement not covered" >        return null</span>
+}
+&nbsp;
+&nbsp;
+&nbsp;
+// Functions to products by seller
+// Functions to products
+&nbsp;
+const collectionProduct = <span class="cstat-no" title="statement not covered" >"Products"</span>
+&nbsp;
+function <span class="fstat-no" title="function not covered" >createProduct(</span>product) {
+<span class="cstat-no" title="statement not covered" >    client.db(dbName).collection(collectionProduct).insertOne(product)</span>
+}
+&nbsp;
+async function <span class="fstat-no" title="function not covered" >deleteProductByName(</span>name) { //Delete Product
+    const product = <span class="cstat-no" title="statement not covered" >await client.db(dbName).collection(collectionProduct).deleteOne(</span>
+        { name: `${name}` }
+    );
+<span class="cstat-no" title="statement not covered" >    return product</span>
+}
+&nbsp;
+function <span class="fstat-no" title="function not covered" >getAllProducts(</span>) {
+<span class="cstat-no" title="statement not covered" >    return client.db(dbName).collection(collectionProduct).find({}).toArray();</span>
+}
+&nbsp;
+async function <span class="fstat-no" title="function not covered" >getProductByName(</span>name) {
+&nbsp;
+    let product = <span class="cstat-no" title="statement not covered" >await client.db(dbName).collection(collectionProduct).findOne(</span>
+        { name: `${name}` }
+    );
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    console.log(product)</span>
+<span class="cstat-no" title="statement not covered" >    return product</span>
+}
+&nbsp;
+async function <span class="fstat-no" title="function not covered" >UpdateProductByName(</span>product) {
+    const res = <span class="cstat-no" title="statement not covered" >await client.db(dbName).collection(collectionProduct).replaceOne({ id: product.id }, product);</span>
+<span class="cstat-no" title="statement not covered" >    console.log(res)</span>
+}
+&nbsp;
+&nbsp;
+<span class="cstat-no" title="statement not covered" >module.exports = {</span>
+    loginStatus: loginStatus,
+    getAllUsers: getAllUsers,
+    createUser: createUser,
+    getUserByEmail: getUserByEmail,
+    deleteUserByEmail: deleteUserByEmail,
+    getAllProducts: getAllProducts,
+    getProductByName: getProductByName,
+    deleteProductByName: deleteProductByName,
+    createProduct: createProduct,
+    UpdateUserByEmail: UpdateUserByEmail,
+    UpdateProductByName:UpdateProductByName
+}</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Sun May 15 2022 16:41:28 GMT-0500 (hora de verano central)
+</div>
+</div>
+<script src="..\..\prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="..\..\sorter.js"></script>
+</body>
+</html>

@@ -77,14 +77,6 @@
  *    responses:
  *      '200':
  *          description: A successful response
- * /user/createcarrito:
- *  post:
- *    description: create carrito
- *    parameters:
- *      - in: carrito body JSON
- *    responses:
- *      '200':
- *          description: A successful response
  * 
  * /user/deleteuser?email={email}:
  *  delete:
