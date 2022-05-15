@@ -18,13 +18,13 @@
  *          description: A successful response
  * /user/getallproducts:
  *  get:
- *    description: get all de products
+ *    description: get all the products
  *    responses:
  *      '200':
  *          description: A successful response
  * /user/getproductname:
  *  get:
- *    description: get all de products
+ *    description: get product by name
  *    parameters:
  *      - in: product name
  *    responses:
