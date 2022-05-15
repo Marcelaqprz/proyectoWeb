@@ -51,13 +51,6 @@ export class RegistroComponent implements OnInit {
     this.modalService.open(content, { centered: true });
   }
 
- /* getErrorMessage() {
-    if (this.emailForm.hasError('required')) {
-      return 'Ingresa un correo';
-    }
-    return this.emailForm.hasError('email') ? 'No es un correo valido!' : '';
-  }*/
-
   CreateUser(){
     console.log("entra Create The User")
     console.log(this.dataUser)

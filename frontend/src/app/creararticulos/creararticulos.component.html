@@ -1,17 +1,4 @@
-<mat-toolbar class="toolbar-inicio">
-    <mat-toolbar-row>
-        <button routerLink="/home" >DABO</button>
-        <span class="toolbar-spacer"></span>
-        <h5>Registro de producto</h5>
-    </mat-toolbar-row>
-</mat-toolbar>
-
-<!--<ng-container class="body-inicio" style="background-color: #75c9b7">
-    <ng-container class="toolbar-spacer">
-        
-    </ng-container>
-</ng-container>-->
-<div>
+<div class="container">
     <form class="example-form">
       <mat-form-field class="example-full-width" appearance="fill">
         <mat-label>Marca</mat-label>
@@ -51,24 +38,10 @@
             name="cantProductos" required>
         </mat-form-field>
       </form>
-   <!--<form>
-      <mat-form-field class="example-full-width" appearance="fill">
-        <mat-label>Etiqueta</mat-label>
-        <select matNativeControl  name="tipousuario" ngfor="let item of value">
-          <option >{[value]}</option>
-          
-        </select>
-      </mat-form-field>
-    </form>
--->
-    <div class="button-accept">
-      <button type="button" mat-raised-button color="warn" routerLink="/home">Cancelar</button>
+    <div class="buttons-container">
+      <button type="button" mat-raised-button color="warn" routerLink="/home" class="btn-cancel">Cancelar</button>
+      <div></div>
       <button type="button" mat-raised-button color="primary" (click)="CreateProduct()"
-        routerLink="/home">Crear</button>
+        routerLink="/home" class="btn-accept">Crear</button>
     </div>
   </div>
-
-
-
-<!--
--->

@@ -1,53 +1,102 @@
-<!--<ng-template #content let-modal class="menu-desplegable">
-    <div class="modal-header">
-      <h4 style="margin: 0rem">Iniciar sesión</h4>
+<ng-template #content let-modal>
+  <div class="modal-header">
+    <h4 style="margin: 0rem">Iniciar sesión</h4>
+    <button
+      type="button"
+      class="btn-close"
+      (click)="modal.dismiss('Cross click')"
+    ></button>
+  </div>
+  <div class="modal-body">
+    Correo:
+    <mat-form-field appearance="fill">
+      <mat-label>Correo</mat-label>
+      <input
+        type="email"
+        matInput
+        placeholder="Ex. test@gmail.com"
+        [(ngModel)]="email"
+        name="email"
+        required
+      />
+    </mat-form-field>
+    <br />
+    Contraseña:
+    <mat-form-field appearance="fill">
+      <mat-label>Contraseña </mat-label>
+      <input
+        type="password"
+        matInput
+        placeholder="Ex. test@gmail.com"
+        [(ngModel)]="password"
+        name="password"
+        required
+      />
+    </mat-form-field>
+  </div>
+  <div class="modal-footer">
+    <div class="grid">
+      <div>
+        No tiene cuenta?
+        <a routerLink="/registro" (click)="modal.dismiss('Cross click')"
+          >Registro</a
+        >
+      </div>
+      <div></div>
       <button
+        class="cancelar-btn"
+        mat-button
         type="button"
-        class="btn-close"
         (click)="modal.dismiss('Cross click')"
-      ></button>
-    </div>
-    <div class="modal-body">
-      Correo:
-      <mat-form-field appearance="fill">
-        <mat-label>Correo</mat-label>
-        <input
-          matInput
-          placeholder="Joe@Doe.com"
-          [formControl]="email"
-          required
-        />
-      </mat-form-field>
-      <br />
-      Contraseña:
-      <mat-form-field appearance="fill">
-        <mat-label>Contraseña </mat-label>
-        <input matInput required />
-      </mat-form-field>
-    </div>
-    <div class="modal-footer">
-      No tiene cuenta? <a href="./registro">Registro</a>
-      <span style="width: '30%'"></span>
-      <button class="cancelar-btn" mat-button>Cancelar</button>
-      <button class="inicio-btn" mat-button>Ingresar</button>
-    </div>
-  </ng-template>
-  <mat-toolbar class="toolbar-inicio">
-    <mat-toolbar-row>
-      <span>DABO</span>
-      <span class="toolbar-spacer"></span>
-      <button mat-icon-button class="toolbar-icon" [matMenuTriggerFor]="menu">
-        <mat-icon>menu</mat-icon>
-        <mat-menu #menu>
-          <button mat-menu-item (click)="open(content)">Iniciar sesión</button>
-          <button mat-menu-item>Carrito de compras</button>
-          <button mat-menu-item>Mis productos</button>
-        </mat-menu>
+      >
+        Cancelar
       </button>
-    </mat-toolbar-row>
-  </mat-toolbar>
--->
-<router-outlet style="background-color: white;"></router-outlet>
- <!--<app-creararticulos></app-creararticulos>-->
- <!--<app-registro></app-registro>-->
-  
+      <button class="inicio-btn" mat-button (click)="loginStatusUser()">
+        Ingresar
+      </button>
+    </div>
+  </div>
+</ng-template>
+
+<mat-toolbar class="toolbar-inicio">
+  <mat-toolbar-row>
+    <button routerLink="/home">DABO</button>
+    <span class="toolbar-spacer"></span>
+    <button mat-icon-button class="toolbar-icon" [matMenuTriggerFor]="menu">
+      <mat-icon>menu</mat-icon>
+      <mat-menu #menu>
+        <button
+          mat-menu-item
+          (click)="open(content)"
+          [ngStyle]="{ display: !isLoggedIn ? 'block' : 'none' }"
+        >
+          Iniciar sesión
+        </button>
+        <button
+          mat-menu-item
+          (click)="logOutUser()"
+          [ngStyle]="{ display: isLoggedIn ? 'block' : 'none' }"
+        >
+          Cerrar sesión
+        </button>
+        <button
+          mat-menu-item
+          routerLink="/carrito"
+          [ngStyle]="{ display: isLoggedIn ? 'block' : 'none' }"
+        >
+          Carrito de compras
+        </button>
+        <button
+          mat-menu-item
+          routerLink="/crearproducto"
+          [ngStyle]="{ display: isLoggedIn ? 'block' : 'none' }"
+        >
+          Mis productos
+        </button>
+      </mat-menu>
+    </button>
+  </mat-toolbar-row>
+</mat-toolbar>
+<router-outlet style="background-color: white"></router-outlet>
+<!--<app-creararticulos></app-creararticulos>-->
+<!--<app-registro></app-registro>-->
