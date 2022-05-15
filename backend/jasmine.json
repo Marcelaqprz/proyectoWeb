@@ -9,8 +9,5 @@
       "stopSpecOnExpectationFailure": false,
       "stopOnSpecFailure": false,
       "random": false
-    },
-    "helpers": [
-      "helpers/**/*jasmine.js"
-    ]
+    }
   }
