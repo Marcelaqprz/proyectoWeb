@@ -1,11 +1,4 @@
-<mat-toolbar class="toolbar-inicio">
-  <mat-toolbar-row>
-    <button routerLink="/home" >DABO</button>
-    <span class="toolbar-spacer"></span>
-    <h5>Registro de usuario</h5>
-  </mat-toolbar-row>
-</mat-toolbar>
-<div>
+<div class="body-container">
   <form class="example-form">
     <mat-form-field class="example-full-width" appearance="fill">
       <mat-label>Nombre de usuario</mat-label>
@@ -60,8 +53,10 @@
       </select>
     </mat-form-field>
   </form>
-  <div class="button-accept">
+  <div class="button-container">
+    <div></div>
     <button type="button" mat-raised-button color="warn" onclick="window.location.href='home'">Cancelar</button>
+    <div></div>
     <button type="button" mat-raised-button color="primary" (click)="CreateUser()"
       onclick="window.location.href='home'">Crear</button>
   </div>
