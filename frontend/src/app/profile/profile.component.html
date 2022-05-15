@@ -1,0 +1,62 @@
+<div class="container">
+    <form class="example-form">
+      <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>Username</mat-label>
+        <input type="text" matInput placeholder="Ex. user123" [(ngModel)]="dataUser.username" name="username" required>
+      </mat-form-field>
+    </form>
+    <form class="example-form">
+      <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>email</mat-label>
+        <input type="text" matInput placeholder="Ex. user@..." [(ngModel)]="dataUser.email" name="email" required>
+      </mat-form-field>
+    </form>
+    <form class="example-form">
+      <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>Name</mat-label>
+        <input type="text" matInput placeholder="Ex. User Name" [(ngModel)]="dataUser.name" name="name" required>
+      </mat-form-field>
+    </form>
+    <form class="example-form">
+      <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>id</mat-label>
+        <input type="number" matInput placeholder="Ex. 15" [(ngModel)]="dataUser.id" name="id" required>
+      </mat-form-field>
+    </form>
+    <form class="example-form">
+        <mat-form-field class="example-full-width" appearance="fill">
+          <mat-label>Password</mat-label>
+          <input type="text" matInput placeholder="Ex. password123" [(ngModel)]="dataUser.password" name="password" required>
+        </mat-form-field>
+      </form>
+    <form class="example-form">
+    <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>Address</mat-label>
+        <input type="text" matInput placeholder="Ex. Calle Santuario..." [(ngModel)]="dataUser.addres" name="address" required>
+    </mat-form-field>
+    </form>
+    <form class="example-form">
+        <mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>Fecha de registro</mat-label>
+            <input type="text" matInput placeholder="Ex. AAAA-MM-DD" [(ngModel)]="dataUser.reg_date" name="reg_date" required>
+        </mat-form-field>
+    </form>
+    <form class="example-form">
+        <mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>Fecha de nacimiento</mat-label>
+            <input type="text" matInput placeholder="Ex. AAAA-MM-DD" [(ngModel)]="dataUser.date_birth" name="date_birth" required>
+        </mat-form-field>
+    </form>
+    <form class="example-form">
+        <mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>Tipo de usuario</mat-label>
+            <input type="number" matInput placeholder="Ex. 0" [(ngModel)]="dataUser.type_user" name="type_user" required>
+        </mat-form-field>
+    </form>
+    <div class="buttons-container">
+      <button type="button" mat-raised-button color="warn" routerLink="/home" class="btn-cancel">Cancelar</button>
+      <div></div>
+      <button type="button" mat-raised-button color="primary" (click)="updateUser()"
+        routerLink="/home" class="btn-accept">Guardar cambios</button>
+    </div>
+  </div>
