@@ -88,11 +88,19 @@
         </button>
         <button
           mat-menu-item
+          routerLink="/profile"
+          [ngStyle]="{ display: isLoggedIn ? 'block' : 'none' }"
+        >
+          User data
+        </button>
+        <button
+          mat-menu-item
           routerLink="/crearproducto"
           [ngStyle]="{ display: isLoggedIn ? 'block' : 'none' }"
         >
           Mis productos
         </button>
+        
       </mat-menu>
     </button>
   </mat-toolbar-row>

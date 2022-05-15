@@ -28,6 +28,7 @@ import { CarritoComponent } from './carrito/carrito.component';
 //import { AngularFireModule } from '@angular/fire';
 import { RegistroComponent } from './registro/registro.component';
 import {MatButtonModule} from '@angular/material/button'
+import {ProfileComponent} from './profile/profile.component'
 
 
 
@@ -41,7 +42,8 @@ import {MatButtonModule} from '@angular/material/button'
     CreararticulosComponent, 
     FilterPageComponent, 
     RegistroComponent,
-    CarritoComponent
+    CarritoComponent,
+    ProfileComponent
   ],
   imports: [
     BrowserModule,

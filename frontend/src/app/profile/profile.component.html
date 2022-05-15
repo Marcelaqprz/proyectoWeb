@@ -32,7 +32,7 @@
     <form class="example-form">
     <mat-form-field class="example-full-width" appearance="fill">
         <mat-label>Address</mat-label>
-        <input type="text" matInput placeholder="Ex. Calle Santuario..." [(ngModel)]="dataUser.addres" name="address" required>
+        <input type="text" matInput placeholder="Ex. Calle Santuario..." [(ngModel)]="dataUser.address" name="address" required>
     </mat-form-field>
     </form>
     <form class="example-form">
@@ -57,6 +57,6 @@
       <button type="button" mat-raised-button color="warn" routerLink="/home" class="btn-cancel">Cancelar</button>
       <div></div>
       <button type="button" mat-raised-button color="primary" (click)="updateUser()"
-        routerLink="/home" class="btn-accept">Guardar cambios</button>
+        routerLink="/home" class="btn-accept">Guardar</button>
     </div>
   </div>
