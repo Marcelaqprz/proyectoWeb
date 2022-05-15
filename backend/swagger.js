@@ -16,15 +16,21 @@
  *    responses:
  *      '200':
  *          description: A successful response
- * /user/deleteuser:
- *  delete:
- *    description: Delete the user by the email
- *    parameters:
- *      - in: Email
- *        email: string
+ * /user/getallproducts:
+ *  get:
+ *    description: get all de products
  *    responses:
  *      '200':
  *          description: A successful response
+ * /user/getproductname:
+ *  get:
+ *    description: get all de products
+ *    parameters:
+ *      - in: product name
+ *    responses:
+ *      '200':
+ *          description: A successful response
+
  * /user/upuseremail:
  *  post:
  *    description: Update the user
@@ -58,28 +64,6 @@
  *    responses:
  *      '200':
  *          description: A successful response
- * /user/deleteproduct:
- *  delete:
- *    description: delete a product by name
- *    parameters:
- *      - in: product name JSON
- *    responses:
- *      '200':
- *          description: A successful response
- * /user/getallproducts:
- *  get:
- *    description: get all de products
- *    responses:
- *      '200':
- *          description: A successful response
- * /user/getproductname:
- *  get:
- *    description: get all de products
- *    parameters:
- *      - in: product name
- *    responses:
- *      '200':
- *          description: A successful response
  * /user/upproductname:
  *  post:
  *    description: update a product
@@ -93,6 +77,24 @@
  *    description: create carrito
  *    parameters:
  *      - in: product
+ *    responses:
+ *      '200':
+ *          description: A successful response
+ * 
+ * /user/deleteuser:
+ *  delete:
+ *    description: Delete the user by the email
+ *    parameters:
+ *      - in: Email
+ *        email: string
+ *    responses:
+ *      '200':
+ *          description: A successful response
+ * /user/deleteproduct:
+ *  delete:
+ *    description: delete a product by name
+ *    parameters:
+ *      - in: product name JSON
  *    responses:
  *      '200':
  *          description: A successful response
