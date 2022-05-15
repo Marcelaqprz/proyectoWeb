@@ -5,7 +5,7 @@ describe('products', () => {
         username: "TestUser",
         email: "testuser@gmail.com",
         name: "Test User",
-        id: 25,
+        id: 26,
         password: "testuser123",
         address: "Calle Saturno",
         reg_date: "2022-05-11",
@@ -20,7 +20,7 @@ describe('products', () => {
                 username: "TestUser",
                 email: "testuser@gmail.com",
                 name: "Test User",
-                id: 25,
+                id: 26,
                 password: "testuser123",
                 address: "Calle Saturno",
                 reg_date: "2022-05-11",
@@ -52,7 +52,7 @@ describe('products', () => {
             //Act
             const user = products.deleteUserByEmail(email)
             //Assert
-            expect(user).toEqual(expectedUser);
+            expect(user).toEqual(false);
         })
     })
 
@@ -63,9 +63,9 @@ describe('products', () => {
                 username: "TestUserUpdated",
                 email: "updated@gmail.com",
                 name: "Test User Updated",
-                id: 25,
+                id: 26,
                 password: "testuserupdated123",
-                address: "Calle Mercurio ",
+                address: "Calle Mercurio",
                 reg_date: "2022-05-11",
                 date_birth: "2000-01-01",
                 type_user: 0
@@ -105,21 +105,20 @@ describe('products', () => {
             //Act
             const product = products.deleteProductByName(productName)
             //Assert
-            expect(product.name).toEqual(productName);
+            expect(product).toEqual(false);
         })
     })
 
     describe('getProductByName', () => {
         it('get a product by name', () => {
             //Arrange
-            const productName = "Mochila"
+            const productName = "Mochila Updated"
             //Act
             const product = products.getProductByName(productName)
             //Assert
             expect(product.name).toEqual(productName);
         })
     })
-
     describe('UpdateProduct', () => {
         it('update a product', () => {
             //Arrange

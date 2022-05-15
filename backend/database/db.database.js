@@ -103,39 +103,9 @@ async function UpdateProductByName(product) {
     console.log(res)
 }
 
-// Functions to carrito
-
-const carritoProducts = "carrito"
-
-function createCarrito(product) {
-    client.db(dbName).collection(carritoProducts).insertOne(product)
-}
-
-async function deleteProductByIDCarrito(id) { //Delete Product
-    let pr = await client.db(dbName).collection(carritoProducts).deleteOne(
-        { idcarrito: parseInt(id) }
-    );
-    console.log(pr)
-    return pr
-}
-
-// Functions to FactsSales
-
-const collectionFactsSales = "FactsSales"
-
-function createFact(sale) {
-    client.db(dbName).collection(collectionFactsSales).insertOne({sale})
-}
-
-function getallFactSales() {
-    return client.db(dbName).collection(collectionFactsSales).find({}).toArray();
-}
-
 
 module.exports = {
     loginStatus: loginStatus,
-    createCarrito: createCarrito,
-    deleteProductByIDCarrito: deleteProductByIDCarrito,
     getAllUsers: getAllUsers,
     createUser: createUser,
     getUserByEmail: getUserByEmail,
@@ -145,7 +115,5 @@ module.exports = {
     deleteProductByName: deleteProductByName,
     createProduct: createProduct,
     UpdateUserByEmail: UpdateUserByEmail,
-    UpdateProductByName:UpdateProductByName,
-    createFact: createFact,
-    getallFactSales: getallFactSales,
+    UpdateProductByName:UpdateProductByName
 }

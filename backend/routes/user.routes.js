@@ -84,19 +84,4 @@ router.post("/upproductname", async (req, res, next)=>{
       }
 })
 
-
-// Carrito
-
-router.post("/createcarrito", async (req, res, next)=>{
-    const carrito = req.body
-    await db.createCarrito(carrito)
-    res.sendStatus(200)
-})
-
-router.delete("/dproductid", async (req, res, next)=>{
-    console.log(req.query.id)
-    await db.deleteProductByIDCarrito(req.query.id)
-    res.sendStatus(200)
-})
-
 module.exports = router;

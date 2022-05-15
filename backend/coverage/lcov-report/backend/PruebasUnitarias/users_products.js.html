@@ -1,0 +1,435 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for backend/PruebasUnitarias/users_products.js</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="..\..\prettify.css" />
+    <link rel="stylesheet" href="..\..\base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(..\..\sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="..\..\index.html">All files</a> / <a href="index.html">backend/PruebasUnitarias</a> users_products.js
+    </h1>
+    <div class='clearfix'>
+    </div>
+  </div>
+  <div class='status-line high'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">/* connect to MongoDB*/
+const {getJSON, saveJSON} = require('./fileHelpers');
+&nbsp;
+&nbsp;
+function <span class="fstat-no" title="function not covered" >getAllUsers(</span>) {
+<span class="cstat-no" title="statement not covered" >    return data.users;</span>
+}
+&nbsp;
+function createUser(user) {
+    const data = getJSON();
+    /*const User = {
+        username: user.username,
+        email: user.email,
+        name: user.name,
+        id: user.id,
+        password: user.password,
+        address: user.address,
+        reg_date: user.reg_date,
+        date_birth: user.date_birth,
+        type_user: user.type_user
+    };*/
+    data.users.push(user);
+    saveJSON(data);
+    return user;
+}
+&nbsp;
+function getUserByEmail(useremail) {
+    const data = getJSON();
+    const foundUser  = data.users.find(({email}) =&gt; email === useremail)
+    const user = foundUser || <span class="branch-1 cbranch-no" title="branch not covered" >{};</span>
+    saveJSON(data);
+    return user;
+}
+&nbsp;
+function deleteUserByEmail(useremail) {
+    const data = getJSON();
+    const foundUser  = data.users.find(({email}) =&gt; email === useremail)
+    saveJSON(data);
+    const deleteUser = delete foundUser
+    return deleteUser;
+}
+&nbsp;
+function UpdateUser(user) {
+    const data = getJSON();
+    const userUpdated  = data.users.find(({id}) =&gt; id === user.id)
+    
+    userUpdated.userName = user.userName || userUpdated.userName;
+    userUpdated.email = user.email || <span class="branch-1 cbranch-no" title="branch not covered" >userUpdated.email;</span>
+    userUpdated.name = user.name || <span class="branch-1 cbranch-no" title="branch not covered" >userUpdated.name;</span>
+    userUpdated.password = user.password || <span class="branch-1 cbranch-no" title="branch not covered" >userUpdated.password;</span>
+    userUpdated.address = user.address || <span class="branch-1 cbranch-no" title="branch not covered" >userUpdated.address;</span>
+    userUpdated.reg_date = user.reg_date || <span class="branch-1 cbranch-no" title="branch not covered" >userUpdated.reg_date;</span>
+    userUpdated.date_birth = user.date_birth || <span class="branch-1 cbranch-no" title="branch not covered" >userUpdated.date_birth;</span>
+    userUpdated.type_user = user.type_user || userUpdated.type_user;
+    
+    saveJSON(data);
+&nbsp;
+    return user;
+}
+&nbsp;
+// Functions to products by seller
+// Functions to products
+&nbsp;
+const collectionProduct = "Products"
+&nbsp;
+function createProduct(product) {
+    const data = getJSON();
+    /*const newProduct = {
+        id: product.id,
+        name: product.name,
+        description: product.description,
+        imageProduct: product.imageProduct,
+        price: product.price,
+        id_user_seller: product.id_user_seller,
+        discount: product.discount,
+        stock: product.stock,
+        tag: product.tag,
+    }*/
+    data.products.push(product);
+    saveJSON(data);
+    return product;
+}
+&nbsp;
+function deleteProductByName(productname) { //Delete Product
+    const data = getJSON();
+    const product  = data.products.find(({name}) =&gt; name === productname)
+    saveJSON(data);
+    const deleteProduct = delete product
+    return deleteProduct;
+}
+&nbsp;
+function <span class="fstat-no" title="function not covered" >getAllProducts(</span>) {
+    const data = <span class="cstat-no" title="statement not covered" >getJSON();</span>
+<span class="cstat-no" title="statement not covered" >    return data.products;</span>
+}
+&nbsp;
+function getProductByName(nameproduct) {
+    const data = getJSON();
+    const foundProduct  = data.products.find(({name}) =&gt; name === nameproduct)
+    return foundProduct;
+}
+&nbsp;
+function UpdateProduct(product) {
+    const data = getJSON();
+    const productUpdated  = data.products.find(({id}) =&gt; id === product.id)
+&nbsp;
+    productUpdated.name = product.name || <span class="branch-1 cbranch-no" title="branch not covered" >productUpdated.name;</span>
+    productUpdated.description = product.description || <span class="branch-1 cbranch-no" title="branch not covered" >productUpdated.description;</span>
+    productUpdated.imageProduct = product.imageProduct || <span class="branch-1 cbranch-no" title="branch not covered" >productUpdated.imageProduct;</span>
+    productUpdated.price = product.price || <span class="branch-1 cbranch-no" title="branch not covered" >productUpdated.price;</span>
+    productUpdated.id_user_seller = product.id_user_seller || <span class="branch-1 cbranch-no" title="branch not covered" >productUpdated.id_user_seller;</span>
+    productUpdated.discount = product.discount || productUpdated.discount;
+    productUpdated.stock = product.stock || <span class="branch-1 cbranch-no" title="branch not covered" >productUpdated.stock;</span>
+    productUpdated.tag = product.tag || <span class="branch-1 cbranch-no" title="branch not covered" >productUpdated.tag;</span>
+&nbsp;
+    saveJSON(data);
+    return product;
+}
+&nbsp;
+module.exports = {
+    getAllUsers: getAllUsers,
+    createUser: createUser,
+    getUserByEmail: getUserByEmail,
+    deleteUserByEmail: deleteUserByEmail,
+    getAllProducts: getAllProducts,
+    getProductByName: getProductByName,
+    deleteProductByName: deleteProductByName,
+    createProduct: createProduct,
+    UpdateUser: UpdateUser,
+    UpdateProduct: UpdateProduct,
+}</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Sun May 15 2022 16:41:28 GMT-0500 (hora de verano central)
+</div>
+</div>
+<script src="..\..\prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="..\..\sorter.js"></script>
+</body>
+</html>

@@ -1,5 +1,4 @@
 import { Component, Input, OnInit, VERSION } from '@angular/core';
-import dataArticulos from '../../assets/data/data.json';
 import { producto } from '../interface/producto.interface';
 
 @Component({
@@ -12,7 +11,6 @@ export class GridComponent implements OnInit {
 
   ngVersion: string = VERSION.full;
   breakpoint: number | undefined;
-  data = dataArticulos;
   constructor() { }
 
   ngOnInit(): void {

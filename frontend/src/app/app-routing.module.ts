@@ -6,6 +6,7 @@ import { FilterPageComponent } from './filter-page/filter-page.component';
 import { HomeComponent } from './home/home.component';
 import { RegistroComponent } from './registro/registro.component';
 import {CreararticulosComponent} from './creararticulos/creararticulos.component'
+import {ProfileComponent} from './profile/profile.component'
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
@@ -14,6 +15,7 @@ const routes: Routes = [
   { path: 'filer/:name', component: FilterPageComponent },
   {path: 'crearproducto', component: CreararticulosComponent},
   { path: 'carrito', component: CarritoComponent },
+  { path: 'profile', component: ProfileComponent },
   { path: '**', redirectTo: '/home', pathMatch: 'full' }
 
 ];

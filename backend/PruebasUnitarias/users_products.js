@@ -1,6 +1,7 @@
 /* connect to MongoDB*/
 const {getJSON, saveJSON} = require('./fileHelpers');
 
+
 function getAllUsers() {
     return data.users;
 }
@@ -23,28 +24,26 @@ function createUser(user) {
     return user;
 }
 
-async function getUserByEmail(email) {
+function getUserByEmail(useremail) {
     const data = getJSON();
-    const foundUser  = data.users.find(({username}) => username === email)
+    const foundUser  = data.users.find(({email}) => email === useremail)
     const user = foundUser || {};
+    saveJSON(data);
     return user;
 }
 
-async function deleteUserByEmail(email) {
+function deleteUserByEmail(useremail) {
     const data = getJSON();
-    const index = this.getIndex(email);
-    if (index >= 0) {
-        const user = data.users.splice(index, 1);
-        saveJSON(data);
-        return user;
-    }
-    return {};
+    const foundUser  = data.users.find(({email}) => email === useremail)
+    saveJSON(data);
+    const deleteUser = delete foundUser
+    return deleteUser;
 }
 
-async function UpdateUser(user) {
+function UpdateUser(user) {
     const data = getJSON();
-    const userUpdated = this.get(user.id);
-
+    const userUpdated  = data.users.find(({id}) => id === user.id)
+    
     userUpdated.userName = user.userName || userUpdated.userName;
     userUpdated.email = user.email || userUpdated.email;
     userUpdated.name = user.name || userUpdated.name;
@@ -53,13 +52,9 @@ async function UpdateUser(user) {
     userUpdated.reg_date = user.reg_date || userUpdated.reg_date;
     userUpdated.date_birth = user.date_birth || userUpdated.date_birth;
     userUpdated.type_user = user.type_user || userUpdated.type_user;
+    
+    saveJSON(data);
 
-    const index = this.getIndex(user.userName);
-    if (index > 0) {
-      data.users[index] = {...data.users[index], ...user};
-      saveJSON(data);
-      return data.users[index];
-    }
     return user;
 }
 
@@ -86,15 +81,12 @@ function createProduct(product) {
     return product;
 }
 
-async function deleteProductByName(name) { //Delete Product
+function deleteProductByName(productname) { //Delete Product
     const data = getJSON();
-    const index = this.getIndex(name);
-    if (index >= 0) {
-        const product = data.products.splice(index, 1);
-        saveJSON(data);
-        return product;
-    }
-    return {};
+    const product  = data.products.find(({name}) => name === productname)
+    saveJSON(data);
+    const deleteProduct = delete product
+    return deleteProduct;
 }
 
 function getAllProducts() {
@@ -102,16 +94,15 @@ function getAllProducts() {
     return data.products;
 }
 
-async function getProductByName(name) {
+function getProductByName(nameproduct) {
     const data = getJSON();
-    const foundProduct  = data.products.find(({productname}) => productname === name)
-    const product = foundProduct || {};
-    return product;
+    const foundProduct  = data.products.find(({name}) => name === nameproduct)
+    return foundProduct;
 }
 
-async function UpdateProduct(product) {
+function UpdateProduct(product) {
     const data = getJSON();
-    const productUpdated = this.get(product.id);
+    const productUpdated  = data.products.find(({id}) => id === product.id)
 
     productUpdated.name = product.name || productUpdated.name;
     productUpdated.description = product.description || productUpdated.description;
@@ -122,13 +113,8 @@ async function UpdateProduct(product) {
     productUpdated.stock = product.stock || productUpdated.stock;
     productUpdated.tag = product.tag || productUpdated.tag;
 
-    const index = this.getIndex(product.name);
-    if (index > 0) {
-      data.products[index] = {...data.products[index], ...product};
-      saveJSON(data);
-      return data.products[index];
-    }
-    return user;
+    saveJSON(data);
+    return product;
 }
 
 module.exports = {
