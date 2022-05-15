@@ -7,12 +7,12 @@
  *    responses:
  *      '200':
  *          description: A successful response
- * /user/getuseremail:
+ * /user/getuseremail?email={email}:
  *  get:
  *    description: Get the user by the email
  *    parameters:
- *      - in: Email
- *        email: string
+ *      - name: email
+ *        in: path              
  *    responses:
  *      '200':
  *          description: A successful response
@@ -22,11 +22,12 @@
  *    responses:
  *      '200':
  *          description: A successful response
- * /user/getproductname:
+ * /user/getproductname?name={name}:
  *  get:
  *    description: get product by name
  *    parameters:
- *      - in: product name
+ *      - name: name
+ *        in: path
  *    responses:
  *      '200':
  *          description: A successful response
@@ -34,15 +35,19 @@
  * /user/upuseremail:
  *  post:
  *    description: Update the user
+ *    parameters:
+ *      - in: user body JSON
  *    responses:
  *      '200':
  *          description: A successful response
- * /user/login:
+ * /user/login?email={email}&password={password}:
  *  post:
  *    description: user login
  *    parameters:
- *      - in: email
- *      - in: password
+ *      - name: email
+ *        in: path
+ *      - name: password
+ *        in: path
  *    responses:
  *      '200':
  *          description: A successful response
@@ -52,7 +57,7 @@
  *  post:
  *    description: create a new user
  *    parameters:
- *      - in: user JSON
+ *      - in: user body JSON
  *    responses:
  *      '200':
  *          description: A successful response
@@ -60,7 +65,7 @@
  *  post:
  *    description: create a new product
  *    parameters:
- *      - in: product JSON
+ *      - in: product body JSON
  *    responses:
  *      '200':
  *          description: A successful response
@@ -68,7 +73,7 @@
  *  post:
  *    description: update a product
  *    parameters:
- *      - in: product JSON
+ *      - in: product body JSON
  *    responses:
  *      '200':
  *          description: A successful response
@@ -76,33 +81,26 @@
  *  post:
  *    description: create carrito
  *    parameters:
- *      - in: product
+ *      - in: carrito body JSON
  *    responses:
  *      '200':
  *          description: A successful response
  * 
- * /user/deleteuser:
+ * /user/deleteuser?email={email}:
  *  delete:
  *    description: Delete the user by the email
  *    parameters:
- *      - in: Email
- *        email: string
+ *      - name: email
+ *        in: path
  *    responses:
  *      '200':
  *          description: A successful response
- * /user/deleteproduct:
+ * /user/deleteproduct?name={name}:
  *  delete:
  *    description: delete a product by name
  *    parameters:
- *      - in: product name JSON
- *    responses:
- *      '200':
- *          description: A successful response
- * /user/dproductid:
- *  delete:
- *    description: delete product by id in carrito
- *    parameters:
- *      - in: idproduct
+ *      - name: name
+ *        in: path
  *    responses:
  *      '200':
  *          description: A successful response
