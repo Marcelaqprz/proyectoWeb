@@ -37,7 +37,7 @@ export class HomeComponent implements OnInit {
     console.log(this.authservice.isLoggedIn())
     this.getAllProducts()
 
-    /* const options = {
+    const options = {
       method: 'POST',
       url: 'https://andruxnet-random-famous-quotes.p.rapidapi.com/',
       params: { cat: 'movies', count: '1' },
@@ -53,7 +53,7 @@ export class HomeComponent implements OnInit {
       })
       .catch(function (error) {
         console.error(error);
-      }); */
+      });
   }
 
   open(content) {
