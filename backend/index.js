@@ -2,10 +2,11 @@ const express = require('express')
 const app = express()
 const cors = require('cors');
 const bodyParser = require('body-parser');
-
+const front = require('./public')
 const swaggerUi = require('swagger-ui-express');
 const swaggerJsDoc = require('swagger-jsdoc');
 
+app.use(express.static('public'))
 const swaggerOptions = {
     swaggerDefinition: {
         info: {
@@ -14,7 +15,7 @@ const swaggerOptions = {
             contact: {
                 name: "Mexican Tech"
             },
-            servers: ["hhttp://localhost:3000"]
+            servers: ["http://localhost:3000"]
         }
     },
     //['.routes/*.js]
