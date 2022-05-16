@@ -9,7 +9,7 @@ import { transaccion } from '../interface/transaccion.interface';
 })
 export class DatabaseService {
   constructor(private http: HttpClient) { }
-  URL = "https://proyectopae2022.herokuapp.com/user"
+  URL = "https://proyectopaefinal.herokuapp.com/user"
   getAllUsers() {
     return this.http.get<user[]>(this.URL + "/getallusers")
   }
