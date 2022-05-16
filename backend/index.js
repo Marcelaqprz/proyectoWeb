@@ -2,7 +2,6 @@ const express = require('express')
 const app = express()
 const cors = require('cors');
 const bodyParser = require('body-parser');
-const front = require('./public')
 const swaggerUi = require('swagger-ui-express');
 const swaggerJsDoc = require('swagger-jsdoc');
 
